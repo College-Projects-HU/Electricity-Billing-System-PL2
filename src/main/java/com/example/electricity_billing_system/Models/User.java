@@ -47,6 +47,7 @@ public class User {
     }
     
     // Method to generate a unique userID by incrementing the counter
+    // TODO : Check cases
     private int generateUniqueUserID() {
         int newUserID = nextUserID;
 
