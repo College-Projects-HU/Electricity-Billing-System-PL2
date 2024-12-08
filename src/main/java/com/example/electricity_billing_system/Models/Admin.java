@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Admin extends User {
     
     // Dynamic lists to store bills and users
-    private ArrayList<Bill> regionBills = new ArrayList<>();
+    private ArrayList<bill> regionBills = new ArrayList<>();
     private ArrayList<User> users = new ArrayList<>();
 
     // View all bills for a specific region
-    public ArrayList<Bill> viewAllBills(String region) {
-        ArrayList<Bill> filteredBills = new ArrayList<>();
+    public ArrayList<bill> viewAllBills(String region) {
+        ArrayList<bill> filteredBills = new ArrayList<>();
 
-        for (Bill bill : regionBills) {
+        for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
             if (bill.getRegion().equals(region)) {
                 filteredBills.add(bill);
             }
@@ -25,7 +25,7 @@ public class Admin extends User {
     public double viewTotalCollected(String region) {
         double totalCollected = 0.0;
 
-        for (Bill bill : regionBills) {
+        for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
             if (bill.getRegion().equals(region)) {
                 totalCollected += bill.getAmountPaid();
             }
@@ -36,8 +36,8 @@ public class Admin extends User {
 
     // Generate consumption statistics for a specific region
     public Statistics generateConsumptionStatistics(String region) {
-        ArrayList<Bill> filteredBills = new ArrayList<>();
-        for (Bill bill : regionBills) {
+        ArrayList<bill> filteredBills = new ArrayList<>();
+        for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
             if (bill.getRegion().equals(region)) {
                 filteredBills.add(bill);
             }
@@ -52,7 +52,7 @@ public class Admin extends User {
         double maxConsumption = Double.MIN_VALUE;
         double minConsumption = Double.MAX_VALUE;
 
-        for (Bill bill : filteredBills) {
+        for (com.example.electricity_billing_system.Models.bill bill : filteredBills) {
             double consumption = bill.getConsumption();
             totalConsumption += consumption;
             maxConsumption = Math.max(maxConsumption, consumption);
