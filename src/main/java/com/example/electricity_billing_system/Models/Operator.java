@@ -8,7 +8,7 @@ public class Operator {
     private ArrayList<Meter> meters;
 
     // Constructor
-    public OperatorModule() {
+    public Operator() {
         this.meters = new ArrayList<>();
     }
 

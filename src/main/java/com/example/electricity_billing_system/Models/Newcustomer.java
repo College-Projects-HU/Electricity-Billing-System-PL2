@@ -28,7 +28,7 @@ public class Newcustomer {
         System.out.println("Contract copy attached: " + contractCopy);
     }
 
-    
+
     // Getter methods (optional, for accessing private variables if needed)
     public String getName() {
         return name;
@@ -49,3 +49,4 @@ public class Newcustomer {
     public String getContractCopy() {
         return contractCopy;
     }
+}
