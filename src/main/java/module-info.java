@@ -1,6 +1,7 @@
 module com.example.electricity_billing_system {
     requires javafx.controls;
     requires javafx.fxml;
+    requires de.jensd.fx.glyphs.fontawesome;
 
 
     opens com.example.electricity_billing_system to javafx.fxml;

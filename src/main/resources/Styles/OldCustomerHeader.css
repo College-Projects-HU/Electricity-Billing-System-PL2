@@ -1,0 +1,14 @@
+
+
+.Main-header {
+    -fx-background-color: white;
+}
+
+.Main-header .right-side-header {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+.Main-header .left-side-header {
+    -fx-alignment: center;
+}

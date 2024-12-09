@@ -1,0 +1,86 @@
+
+
+* {
+    -fx-color1 : #222831;
+    -fx-color2 : #393E46;
+    -fx-color3 : #00ADB5;
+    -fx-color4 : #EEEEEE;
+    -fx-icons : #FADA7A;
+    -fx-light : white;
+    -fx-dark : black;
+}
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+
+/* Side Bar Styles */
+.left-side-bar{
+    -fx-background-color: -fx-color3;
+}
+
+.left-side-bar .logo-container{
+    -fx-alignment: center;
+}
+
+.left-side-bar .logout-button{
+    -fx-alignment: center;
+}
+
+.left-side-bar .logo-container FontAwesomeIconView{
+    -fx-fill: -fx-icons;
+}
+
+.left-side-bar .logo-container  Text {
+    -fx-font-size: 1.5em;
+    -fx-fill: -fx-light;
+}
+
+
+/* Header */
+
+.header-container{
+    -fx-background-color: -fx-light;
+    -fx-alignment: center-right;
+    -fx-spacing: 10px;
+}
+
+.header-container FontAwesomeIconView:hover{
+    -fx-cursor: hand;
+}
+
+.header-container .right-side-header{
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+.header-container .welcoming-message {
+    -fx-font-weight: bold;
+    -fx-text-fill: -fx-dark;
+    -fx-alignment: center;
+}
+
+/* Main section */
+
+.main-section-container{
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+    -fx-padding: 20px 80px;
+}
+.main-section-container Label {
+    -fx-font-size: 1.2em;
+    -fx-text-fill: -fx-dark;
+}
+
+.main-section-container Button {
+    -fx-pref-width: 185px;
+    -fx-pref-height: 40px;
+    -fx-background-color: -fx-color2;
+    -fx-text-fill: -fx-light;
+    -fx-font-weight: 600;
+    -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 6);
+}
+.main-section-container Button FontAwesomeIconView {
+    -fx-fill: -fx-light;
+}
+

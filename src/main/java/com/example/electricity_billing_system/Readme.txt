@@ -1,3 +1,7 @@
+Make sure that you have the javafx library installed
+Don't hesitate to contact me if there is any issue.
+
+
 This document explains the purpose of each folder and file in the project directory:
 
 -Controllers

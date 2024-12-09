@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0"
+            prefWidth="600.0" styleClass="Main-header" stylesheets="@../../Styles/OldCustomerHeader.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.electricity_billing_system.Controllers.Customer.OldCustomerHeaderController">
+    <HBox layoutX="539.0" prefHeight="70.0" prefWidth="70.0" styleClass="right-side-header"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <FontAwesomeIconView fx:id="notification_btn" glyphName="BELL" size="15"/>
+        <FontAwesomeIconView fx:id="profile_btn" glyphName="USER" size="30"/>
+    </HBox>
+    <HBox prefHeight="70.0" prefWidth="70.0" styleClass="left-side-header">
+        <FontAwesomeIconView fx:id="back_btn" glyphName="ARROW_LEFT" size="30"/>
+    </HBox>
+</AnchorPane>

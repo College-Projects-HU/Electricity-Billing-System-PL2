@@ -1,0 +1,70 @@
+
+
+* {
+    -fx-color1 : #222831;
+    -fx-color2 : #393E46;
+    -fx-color3 : #00ADB5;
+    -fx-color4 : #EEEEEE;
+    -fx-icons : #FADA7A;
+    -fx-light : white;
+    -fx-dark : black;
+}
+/* Main login container*/
+.login-container {
+    -fx-background-color: -fx-light;
+}
+
+
+/* Logo container Styles */
+.login-logo-container {
+    -fx-background-color: -fx-color3;
+    -fx-alignment: center;
+}
+
+
+.login-logo-container Text {
+    -fx-font-size: 2em;
+    -fx-fill: -fx-light;
+}
+
+.login-logo-container FontAwesomeIconView {
+    -fx-fill: -fx-icons ;
+}
+
+/* Login form Styles */
+
+.login-form-container {
+    -fx-background-color: -fx-color4 ;
+    -fx-spacing: 15;
+    -fx-alignment: center;
+    -fx-padding: 15;
+}
+
+.login-form-container Label {
+    -fx-font-size: 1.1em;
+    -fx-font-weight: bold;
+}
+
+.input-feild {
+    -fx-wrap-text: true;
+    -fx-pref-height: 35;
+    -fx-font-size: 1.2em;
+}
+
+.login-form-container Button {
+    -fx-background-color: -fx-color2;
+    -fx-text-fill: -fx-light ;
+    -fx-font-size: 1.2em;
+    -fx-pref-height: 30;
+    -fx-pref-width: 350;
+    -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 6);
+}
+
+.login-form-container Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+
+.error-label {
+    -fx-text-fill: red;
+}
