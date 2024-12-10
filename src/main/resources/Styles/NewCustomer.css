@@ -1,0 +1,32 @@
+
+
+
+.header {
+    -fx-background-color: white;
+    -fx-padding: 20px;
+    -fx-alignment: left;
+}
+
+.data-container {
+    -fx-alignment: center-left;
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+}
+
+.contract-copy {
+    -fx-alignment: top-center;
+    -fx-spacing: 10px;
+    -fx-padding: 20px;
+}
+.contract-copy Button {
+    -fx-font-size: 0.9em;
+}
+
+.submission-button {
+    -fx-alignment: center;
+}
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

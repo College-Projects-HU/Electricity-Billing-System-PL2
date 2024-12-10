@@ -1,0 +1,45 @@
+
+
+.title {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+
+.hboxes {
+    -fx-spacing: 10px;
+    -fx-alignment: center-left;
+    -fx-padding: 0 50px;
+}
+
+.hboxes Label {
+    -fx-font-weight: bold;
+}
+.calculation {
+    -fx-alignment: center;
+    -fx-spacing: 15px;
+}
+.calculation Label {
+    -fx-font-size: 1.2em;
+}
+
+.calculation Text {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+    -fx-fill: red;
+}
+
+.buttonset {
+    -fx-alignment: center;
+    -fx-spacing: 150px;
+}
+
+.buttonset Button {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 50px;
+}
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

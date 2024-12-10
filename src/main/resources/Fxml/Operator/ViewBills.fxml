@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" stylesheets="@../../Styles/ViewBills.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.electricity_billing_system.Controllers.Operator.ViewBillsController">
+    <Label layoutX="161.0" layoutY="11.0" prefHeight="31.0" prefWidth="277.0" styleClass="title" text="View Bills of Specific Region" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="162.0" AnchorPane.topAnchor="15.0" />
+    <HBox alignment="CENTER_LEFT" layoutX="5.0" layoutY="55.0" prefHeight="70.0" prefWidth="600.0" styleClass="region-selection" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+        <Label text="Select Region :" />
+        <ChoiceBox fx:id="region_select" prefWidth="150.0" />
+    </HBox>
+    <ListView fx:id="bills_list" layoutX="-1.0" layoutY="180.0" prefHeight="450.0" prefWidth="600.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+</AnchorPane>

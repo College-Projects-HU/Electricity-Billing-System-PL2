@@ -1,0 +1,37 @@
+
+
+* {
+    -fx-color1 : #222831;
+    -fx-color2 : #393E46;
+    -fx-color3 : #00ADB5;
+    -fx-color4 : #EEEEEE;
+    -fx-icons : #FADA7A;
+    -fx-light : white;
+    -fx-dark : black;
+}
+
+.side-bar-container {
+    -fx-background-color: -fx-color3;
+}
+
+.side-bar-container .logo-container {
+    -fx-alignment: center;
+}
+
+.side-bar-container .logo-container FontAwesomeIconView {
+    -fx-fill: -fx-icons;
+}
+
+.side-bar-container .logo-container  Text {
+    -fx-font-size: 1.5em;
+    -fx-fill: -fx-light;
+}
+
+.side-bar-container .logout-button {
+    -fx-alignment: center;
+}
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

@@ -2,9 +2,13 @@
 
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.electricity_billing_system.Controllers.Operator.OperatorController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane fx:id="operator_parent" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+        <left>
+                <fx:include source="OperatorMenu.fxml"/>
+        </left>
 
-</AnchorPane>
+        <center>
+                <fx:include source="CollectPayments.fxml"/>
+        </center>
+
+</BorderPane>

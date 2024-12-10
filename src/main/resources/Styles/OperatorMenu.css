@@ -1,0 +1,60 @@
+
+
+
+
+* {
+    -fx-color1 : #222831;
+    -fx-color2 : #393E46;
+    -fx-color3 : #00ADB5;
+    -fx-color4 : #EEEEEE;
+    -fx-icons : #FADA7A;
+    -fx-light : white;
+    -fx-dark : black;
+}
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+.side-bar-container {
+    -fx-background-color: -fx-color3;
+}
+
+
+.logo-section {
+    -fx-alignment: center;
+}
+
+.logo-section FontAwesomeIconView {
+    -fx-fill: -fx-icons;
+
+}
+
+.side-bar-container .logo-section  Text {
+    -fx-font-size: 1.5em;
+    -fx-fill: -fx-light;
+}
+
+.side-bar-container .navigation {
+    -fx-alignment: top-center;
+    -fx-spacing: 20px;
+}
+.side-bar-container .navigation Button {
+    -fx-pref-width: 185px;
+    -fx-pref-height: 40px;
+    -fx-background-color: -fx-color2;
+    -fx-text-fill: -fx-light;
+    -fx-font-weight: 600;
+    -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 6);
+}
+.side-bar-container .navigation Button FontAwesomeIconView {
+    -fx-fill: -fx-light;
+}
+
+
+
+
+.side-bar-container .logout-button {
+    -fx-alignment: center;
+}
+

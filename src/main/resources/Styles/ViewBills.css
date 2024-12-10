@@ -1,0 +1,15 @@
+
+.title{
+    -fx-font-size: 1.3em;
+    -fx-font-weight: bold;
+}
+
+
+.region-selection {
+    -fx-padding: 0 30px;
+    -fx-spacing: 10px;
+}
+
+.list-view .list-view  {
+    -fx-padding: 10px;
+}

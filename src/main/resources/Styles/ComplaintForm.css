@@ -1,0 +1,17 @@
+
+
+.complaintForm{
+    -fx-alignment: center-left;
+    -fx-padding:  5px 20px;
+    -fx-spacing: 5px;
+}
+
+.submit-button {
+    -fx-alignment: top-center;
+}
+
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

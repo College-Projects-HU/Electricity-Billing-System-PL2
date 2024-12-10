@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="450.0" stylesheets="@../../Styles/PayBill.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.electricity_billing_system.Controllers.Customer.PayBillController">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="450.0" styleClass="header" stylesheets="@../../Styles/PayBill.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox layoutX="539.0" prefHeight="70.0" prefWidth="70.0" styleClass="profile-notification" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <FontAwesomeIconView fx:id="notification_btn" glyphName="BELL" size="15" />
+         <FontAwesomeIconView fx:id="profile_btn" glyphName="USER" size="30" />
+      </HBox>
+      <HBox prefHeight="70.0" prefWidth="126.0" styleClass="back-button" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <Button fx:id="back_btn" mnemonicParsing="false" prefHeight="35.0" prefWidth="86.0" text="Back">
+            <graphic>
+               <FontAwesomeIconView glyphName="ARROW_LEFT" />
+            </graphic>
+         </Button>
+      </HBox>
+   </AnchorPane>
+   <VBox layoutY="64.0" prefHeight="330.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <HBox prefHeight="60.0" prefWidth="450.0" styleClass="bill-amount">
+         <Label text="Bill amount :" />
+         <Text fx:id="bill_amount_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="350" />
+         <FontAwesomeIconView glyphName="DOLLAR" />
+      </HBox>
+      <VBox prefHeight="100.0" prefWidth="450.0" styleClass="card-number">
+         <Label text="Enter Card Number :" />
+         <TextField fx:id="card_number_fld" prefHeight="35.0" prefWidth="312.0" />
+      </VBox>
+      <HBox prefHeight="70.0" prefWidth="450.0" styleClass="details-container">
+         <Label text="Exp Date :" />
+         <TextField fx:id="exp_date_fld" prefHeight="35.0" prefWidth="100.0" />
+         <Label text="CVV :" />
+         <TextField fx:id="cvv_fld" prefHeight="35.0" prefWidth="100.0" />
+      </HBox>
+      <VBox prefHeight="101.0" prefWidth="450.0" styleClass="submit-button">
+         <Button fx:id="submit_btn" mnemonicParsing="false" text="Submit Payment" />
+      </VBox>
+   </VBox>
+</AnchorPane>

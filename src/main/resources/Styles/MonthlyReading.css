@@ -1,0 +1,25 @@
+
+
+.monthly-reading {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+
+.estimated-bill {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+.estimated-bill Label {
+    -fx-font-weight: bold;
+}
+
+.submit-button  {
+    -fx-alignment: top-center;
+}
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

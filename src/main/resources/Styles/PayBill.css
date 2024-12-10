@@ -1,0 +1,56 @@
+
+.header {
+    -fx-background-color: white;
+}
+
+.header .profile-notification {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+.header .back-button {
+    -fx-alignment: center;
+}
+
+.bill-amount Label {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.bill-amount Text {
+    -fx-font-size: 1.2em;
+}
+
+
+.bill-amount, .card-number {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+}
+
+.card-number Label {
+    -fx-font-size: 1.3em;
+}
+
+.card-number {
+    -fx-padding: 0 30px;
+}
+
+.details-container {
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+    -fx-padding: 20px 30px;
+}
+.details-container TextField {
+    -fx-pref-width: 120px;
+    -fx-font-size: 1.2em;
+}
+
+
+.submit-button {
+    -fx-alignment: center;
+}
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

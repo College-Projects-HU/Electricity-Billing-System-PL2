@@ -1,0 +1,21 @@
+
+
+.bill-history Label {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+}
+
+.bill-history ListView {
+    -fx-font-size: 1.2em;
+    -fx-padding: 5px;
+}
+
+.bill-history ListView .list-cell {
+    -fx-padding: 5px;
+    -fx-border-color: black;
+}
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
