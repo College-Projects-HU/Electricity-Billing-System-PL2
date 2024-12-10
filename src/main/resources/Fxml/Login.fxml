@@ -23,6 +23,3 @@
       <Button fx:id="register_btn" mnemonicParsing="false" text="Register" />
    </VBox>
 </AnchorPane>
-
-
-mjlhiuh
