@@ -12,3 +12,28 @@ public class App extends Application {
     }
 
 }
+/*
+Customer:
+
+
+
+
+
+
+
+
+
+
+Bills:
+
+
+
+
+
+
+
+
+
+
+
+ */
