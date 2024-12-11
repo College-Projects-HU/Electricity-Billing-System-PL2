@@ -1,17 +1,26 @@
 package com.example.electricity_billing_system;
 
 import com.example.electricity_billing_system.Models.Model;
+import com.example.electricity_billing_system.Models.bill;
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.List;
 
 public class App extends Application {
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         Model.getInstance().getViewFactory().showLoginWindow();
+        bill billClass = new bill();
+        List<bill> allBills = billClass.readBillsData();
+        billClass.updateStatus(allBills,1,"test");
+
     }
 
 }
+
 /*
 User:
 -Get All Customers
@@ -20,9 +29,6 @@ User:
 -*Edit Customer
 -Add Customer
 -GetNumberOfCustomers
--
-
-
 
 
 Bills:
@@ -43,6 +49,17 @@ Add spec Meter
 Active ..
 deactivate..
 update reading
+
+Opderator
+
+
+
+Tarrifs
+
+
+
+Admin
+
 
 
 

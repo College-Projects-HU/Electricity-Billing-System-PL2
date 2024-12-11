@@ -98,7 +98,7 @@ public class Admin extends User {
     }
 }
 
-
+/*
 // Supporting Class for Bill
 class Bill {
     private double amountPaid;
@@ -123,7 +123,7 @@ class Bill {
         return region;
     }
 }
-
+*/
 // Supporting Class for Statistics
 
 class Statistics {

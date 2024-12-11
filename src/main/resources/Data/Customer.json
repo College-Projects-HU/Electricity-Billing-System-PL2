@@ -3,7 +3,7 @@
     "userID" : 1,
     "userName" : "Jane Smith",
     "userPassword" : "securepass",
-    "userRole" : null,
+    "userRole" : "Admin",
     "address" : "456 Oak Avenue",
     "email" : "jane.smith@example.com",
     "phoneNumber" : "555-5678",

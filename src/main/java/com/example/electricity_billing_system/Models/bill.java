@@ -1,9 +1,16 @@
 package com.example.electricity_billing_system.Models;
 
 
+import com.example.electricity_billing_system.Utils.JsonUtil;
+import com.fasterxml.jackson.core.type.TypeReference;
+
+import java.io.IOException;
+import java.util.List;
+
 //bill class
 public class bill {
     // Attributes (private to ensure encapsulation)
+
     private int billID;          // Unique identifier for the bill
     private int customerID;      // ID of the customer the bill is issued for
     private int reading;         // Monthly meter reading
@@ -13,8 +20,9 @@ public class bill {
     private String dueDate;      // Due date for bill payment
     private String status;       // Current status of the bill (e.g., "Paid", "Unpaid", "Overdue")
 
+    public bill() {}
     // Constructor to initialize the Bill object
-    public bill(int billID, int customerID, String meterCode, int reading, double consumption, double amount, String issueDate, String dueDate, String status) {
+    public bill(int billID, int customerID, int reading, double consumption, double amount, String issueDate, String dueDate, String status) {
         this.billID = billID;             // Set unique bill ID
         this.customerID = customerID;     // Set customer ID
         this.reading = reading;           // Set meter reading
@@ -24,7 +32,16 @@ public class bill {
         this.dueDate = dueDate;           // Set due date
         this.status = status;             // Set initial status
     }
+    public List<bill> readBillsData() {
+        try {
+                String billFile = System.getProperty("user.dir") + "\\src\\main\\resources\\" + "Data\\Bills.json";
+            return JsonUtil.readFromJsonFile(billFile, new TypeReference<List<bill>>() {});
 
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+                throw new RuntimeException(e);
+            }
+    }
     // Getters and Setters for all attributes
     // Allow controlled access and modification of private attributes
     public int getBillID() {
@@ -107,11 +124,73 @@ public class bill {
         System.out.println("Bill calculated successfully. Total amount: " + this.amount);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private boolean saveToJson(List<bill> bills) {
+        try {
+            String billFile = System.getProperty("user.dir") + "\\src\\main\\resources\\" + "Data\\Bills.json";
+
+            JsonUtil.writeToJsonFile(bills, billFile);
+            return true;
+        } catch (IOException e) {
+            System.out.println("Failed to save customers to file: " + e.getMessage());
+        }
+        return false;
+    }
+
+
     // Method to update the status of the bill (e.g., from "Unpaid" to "Paid")
-    public void updateStatus(String newStatus) {
+   public void updateStatus(List<bill> AllBills,int billdID, String newStatus) {
+        for (int i = 0; i < AllBills.size(); i++) {
+            if (AllBills.get(i).getBillID() == billdID) {
+                AllBills.get(i).setStatus(newStatus);
+                saveToJson(AllBills);
+                System.out.println("Bill updated successfully with id: " + billdID);
+                return;
+            }
+        }
         this.status = newStatus; // Update the status
         System.out.println("Bill status updated to: " + this.status);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Method to send a reminder if the bill is unpaid
     public void sendReminder() {
