@@ -8,21 +8,20 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="600.0" prefWidth="600.0" stylesheets="@../../Styles/Users.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.electricity_billing_system.Controllers.Admin.UserController">
-   <children>
-      <Text layoutX="250.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users" />
-      <ListView fx:id="users_list" layoutX="25.0" layoutY="202.0" prefHeight="258.0" prefWidth="550.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
-      <HBox layoutY="487.0" prefHeight="100.0" prefWidth="600.0" styleClass="edit-delete-buttons" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <Button fx:id="edit_btn" mnemonicParsing="false" text="Edit" />
-            <Button fx:id="delete_btn" mnemonicParsing="false" text="Delete" />
-         </children>
-      </HBox>
-      <HBox layoutX="9.0" layoutY="93.0" prefHeight="100.0" prefWidth="600.0" styleClass="search-bar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
-         <children>
-            <TextField fx:id="search_fld" />
-            <Button fx:id="search_btn" mnemonicParsing="false" text="Search" />
-         </children>
-      </HBox>
-   </children>
+<AnchorPane prefHeight="600.0" prefWidth="600.0" stylesheets="@../../Styles/Users.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.electricity_billing_system.Controllers.Admin.UsersController">
+   <Text layoutX="250.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Users"/>
+   <ListView fx:id="users_list" layoutX="25.0" layoutY="202.0" prefHeight="258.0" prefWidth="550.0"
+             AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0"/>
+   <HBox layoutY="487.0" prefHeight="100.0" prefWidth="600.0" styleClass="edit-delete-buttons"
+         AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Button fx:id="edit_btn" mnemonicParsing="false" text="Edit"/>
+      <Button fx:id="delete_btn" mnemonicParsing="false" text="Delete"/>
+   </HBox>
+   <HBox layoutX="9.0" layoutY="93.0" prefHeight="100.0" prefWidth="600.0" styleClass="search-bar"
+         AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <TextField fx:id="search_fld"/>
+      <Button fx:id="search_btn" mnemonicParsing="false" text="Search"/>
+   </HBox>
 </AnchorPane>
