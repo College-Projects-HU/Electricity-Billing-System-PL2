@@ -213,11 +213,5 @@ public class bill {
         System.out.println("Status: " + status);
     }
 
-    public Object getRegion() {
-        return null;
-    }
 
-    public double getAmountPaid() {
-        return 0;
-    }
 }

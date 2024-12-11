@@ -15,7 +15,7 @@ public class App extends Application {
         Model.getInstance().getViewFactory().showLoginWindow();
         bill billClass = new bill();
         List<bill> allBills = billClass.readBillsData();
-        billClass.updateStatus(allBills,1,"test");
+        billClass.updateStatus(allBills,1,"paid");
 
     }
 

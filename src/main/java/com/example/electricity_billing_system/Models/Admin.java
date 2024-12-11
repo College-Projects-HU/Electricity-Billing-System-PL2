@@ -12,12 +12,12 @@ public class Admin extends User {
     public ArrayList<bill> viewAllBills(String region) {
         ArrayList<bill> filteredBills = new ArrayList<>();
 
-        for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
+      /*  for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
             if (bill.getRegion().equals(region)) {
                 filteredBills.add(bill);
             }
         }
-
+*/
         return filteredBills;
     }
 
@@ -25,11 +25,11 @@ public class Admin extends User {
     public double viewTotalCollected(String region) {
         double totalCollected = 0.0;
 
-        for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
+       /* for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
             if (bill.getRegion().equals(region)) {
                 totalCollected += bill.getAmountPaid();
             }
-        }
+        }*/
 
         return totalCollected;
     }
@@ -37,11 +37,11 @@ public class Admin extends User {
     // Generate consumption statistics for a specific region
     public Statistics generateConsumptionStatistics(String region) {
         ArrayList<bill> filteredBills = new ArrayList<>();
-        for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
+        /*for (com.example.electricity_billing_system.Models.bill bill : regionBills) {
             if (bill.getRegion().equals(region)) {
                 filteredBills.add(bill);
             }
-        }
+        }*/
 
         if (filteredBills.isEmpty()) {
             System.out.println("No data available for the specified region.");

@@ -6,9 +6,7 @@
   "amount" : 120.0,
   "issueDate" : "2024-11-01",
   "dueDate" : "2024-11-30",
-  "status" : "test",
-  "amountPaid" : 0.0,
-  "region" : null
+  "status" : "paid"
 }, {
   "billID" : 102,
   "customerID" : 2,
@@ -17,7 +15,5 @@
   "amount" : 160.0,
   "issueDate" : "2024-11-05",
   "dueDate" : "2024-12-05",
-  "status" : "Paid",
-  "amountPaid" : 0.0,
-  "region" : null
+  "status" : "Paid"
 } ]
