@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" stylesheets="@../../Styles/ViewStats.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.electricity_billing_system.Controllers.Admin.ViewStatsController"" >
+    <HBox layoutX="17.0" layoutY="64.0" prefHeight="42.0" prefWidth="348.0" styleClass="region">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select  Region:" wrappingWidth="104.728515625"/>
+        <ChoiceBox fx:id="select_region" prefHeight="23.0" prefWidth="190.0" styleClass="regions-button"/>
+    </HBox>
+    <VBox layoutX="387.0" layoutY="38.0" prefHeight="107.0" prefWidth="174.0" styleClass="total-collected">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Collected" wrappingWidth="115.13671875"/>
+        <Text fx:id="total_collected_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
+    </VBox>
+    <ListView fx:id="consumption_list" layoutX="4.0" layoutY="216.0" prefHeight="375.0" prefWidth="591.0"
+              styleClass="consumption-fields" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="5.0"
+              AnchorPane.rightAnchor="5.0"/>
+    <HBox layoutX="5.0" layoutY="176.0" prefHeight="39.0" prefWidth="571.0" styleClass="consumption-fields"
+          AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User ID" wrappingWidth="55.13671875"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UserName"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code Meter" wrappingWidth="90.470703125"/>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Consumption" wrappingWidth="133.13671875"/>
+    </HBox>
+</AnchorPane>

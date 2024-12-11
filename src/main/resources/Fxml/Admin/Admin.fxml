@@ -4,11 +4,11 @@
 
 <BorderPane fx:id="Admin_prent" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
     <left>
-        <fx:include source="AdminMenue.fxml"/>
+        <fx:include source="AdminMenu.fxml"/>
     </left>
 
     <center>
-        <fx:include source="viewStats.fxml"/>
+        <fx:include source="ViewStats.fxml"/>
     </center>
 
 </BorderPane>

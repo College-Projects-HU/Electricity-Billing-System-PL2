@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Styles/ViewBills.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Fxml.Admin.BillAdmin">
+    <HBox alignment="CENTER_LEFT" layoutX="47.0" layoutY="68.0" prefHeight="70.0" prefWidth="525.0"
+          styleClass="region-selection">
+        <Label text="Select Region :"/>
+        <ChoiceBox fx:id="region_select" prefWidth="150.0"/>
+    </HBox>
+    <ListView fx:id="bills_list" layoutX="5.0" layoutY="154.0" prefHeight="425.0" prefWidth="587.0"/>
+    <Text layoutX="263.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="View Bills"/>
+</AnchorPane>
