@@ -13,15 +13,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class OldCustomerController implements Initializable {
-    public FontAwesomeIconView notification_btn;
-    public FontAwesomeIconView profile_btn;
     public Button pay_bill_btn;
     public Button bill_details_btn;
     public Button monthly_reading_btn;
     public Button complaint_btn;
-    public Label meter_code_lbl;
     public TextField meter_code_fld;
     public Text welcome_message_txt;
+    public Text error_msg;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -29,7 +27,7 @@ public class OldCustomerController implements Initializable {
     }
 
     private void viewPayBill() {
-        Stage stage = (Stage)notification_btn.getScene().getWindow();
+        Stage stage = (Stage)error_msg.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
         Model.getInstance().getViewFactory().getPayBillView();
     }

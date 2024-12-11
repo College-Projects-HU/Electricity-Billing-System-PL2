@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Styles/ViewBills.css"
             xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Fxml.Admin.BillAdmin">
+            fx:controller="com.example.electricity_billing_system.Controllers.Admin.ViewBillsController">
     <HBox alignment="CENTER_LEFT" layoutX="47.0" layoutY="68.0" prefHeight="70.0" prefWidth="525.0"
           styleClass="region-selection">
         <Label text="Select Region :"/>

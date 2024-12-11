@@ -13,16 +13,17 @@
    <AnchorPane layoutX="276.0" layoutY="80.0" prefHeight="400.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <AnchorPane prefHeight="70.0" prefWidth="450.0" styleClass="header-container" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <HBox layoutX="277.0" layoutY="63.0" prefHeight="70.0" prefWidth="73.0" styleClass="right-side-header" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <FontAwesomeIconView fx:id="notification_btn" glyphName="BELL" size="15" />
-            <FontAwesomeIconView fx:id="profile_btn" glyphName="USER" size="30" />
+            <FontAwesomeIconView glyphName="BELL" size="15" />
+            <FontAwesomeIconView glyphName="USER" size="30" />
          </HBox>
          <VBox layoutX="118.0" prefHeight="70.0" prefWidth="225.0" styleClass="welcoming-message" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <Text fx:id="welcome_message_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi , Customer" wrappingWidth="109.5" />
          </VBox>
       </AnchorPane>
       <VBox layoutY="162.0" prefHeight="330.0" prefWidth="450.0" styleClass="main-section-container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <Label fx:id="meter_code_lbl" text="Meter Code" />
+         <Label text="Meter Code" />
          <TextField fx:id="meter_code_fld" />
+         <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0" />
          <Button fx:id="pay_bill_btn" layoutX="10.0" layoutY="60.0" mnemonicParsing="false" text="Pay Bill">
             <graphic>
                <FontAwesomeIconView glyphName="DOLLAR" />

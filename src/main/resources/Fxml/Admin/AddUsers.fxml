@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Fxml.Admin.AddUsers"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="600.0" stylesheets="@../../Styles/AddUsers.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.electricity_billing_system.Controllers.Admin.AddUsersController">
+   <HBox layoutX="-225.0" layoutY="179.0" prefHeight="100.0" prefWidth="200.0"/>
+   <Text layoutX="248.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Add User"
+         AnchorPane.topAnchor="15.0"/>
+   <VBox layoutX="300.0" layoutY="94.0" prefHeight="400.0" prefWidth="250.0" styleClass="right-vbox"
+         AnchorPane.rightAnchor="50.0">
+      <ChoiceBox fx:id="role_selection" prefWidth="150.0"/>
+      <TextField fx:id="user_name_fld" layoutX="10.0" layoutY="10.0"/>
+      <TextField fx:id="email_fld" layoutX="10.0" layoutY="45.0"/>
+      <TextField fx:id="region_fld" layoutX="10.0" layoutY="80.0"/>
+      <TextField fx:id="password_fld" layoutX="10.0" layoutY="115.0"/>
+   </VBox>
+   <VBox layoutX="41.0" layoutY="94.0" prefHeight="400.0" prefWidth="250.0" styleClass="left-vbox"
+         AnchorPane.leftAnchor="50.0">
+      <Label text="Role :"/>
+      <Label layoutX="10.0" layoutY="10.0" text="User Name :"/>
+      <Label layoutX="10.0" layoutY="35.0" text="Email :"/>
+      <Label layoutX="10.0" layoutY="60.0" text="Region :"/>
+      <Label layoutX="10.0" layoutY="85.0" text="Password :"/>
+   </VBox>
+   <Button fx:id="add_user_btn" layoutX="270.0" layoutY="523.0" mnemonicParsing="false" text="Add"/>
+   <HBox layoutX="56.0" layoutY="7.0" prefHeight="100.0" prefWidth="200.0"/>
 </AnchorPane>

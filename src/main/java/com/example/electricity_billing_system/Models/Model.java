@@ -1,12 +1,15 @@
 package com.example.electricity_billing_system.Models;
 
 import com.example.electricity_billing_system.Views.ViewFactory;
+import javafx.scene.layout.BorderPane;
 
 public class Model {
     private static Model model;
     private final ViewFactory viewFactory;
+    private BorderPane operatorParent;
 
-    public Model() {
+
+    private Model() {
         this.viewFactory = new ViewFactory();
     }
 
@@ -20,5 +23,13 @@ public class Model {
 
     public ViewFactory getViewFactory() {
         return viewFactory;
+    }
+
+    public void setOperatorParent(BorderPane operatorParent) {
+        this.operatorParent = operatorParent;
+    }
+
+    public BorderPane getOperatorParent() {
+        return operatorParent;
     }
 }

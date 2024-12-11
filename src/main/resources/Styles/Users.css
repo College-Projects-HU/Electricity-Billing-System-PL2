@@ -1,0 +1,16 @@
+
+
+.title {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+.search-bar {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+
+.edit-delete-buttons {
+    -fx-alignment: center;
+    -fx-spacing: 100px;
+}
