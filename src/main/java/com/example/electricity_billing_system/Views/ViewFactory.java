@@ -1,5 +1,6 @@
 package com.example.electricity_billing_system.Views;
 
+import com.example.electricity_billing_system.Controllers.Admin.AdminController;
 import com.example.electricity_billing_system.Controllers.Customer.OldCustomerMainController;
 import com.example.electricity_billing_system.Controllers.Operator.OperatorController;
 import javafx.beans.property.SimpleStringProperty;
@@ -11,6 +12,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViewFactory {
+
+//   -------------------- Operator  ---------- //
     private final StringProperty operatorSelectedMenuItem;
     private AnchorPane CollectPaymentView;
     private AnchorPane RegionBillsView;
@@ -18,10 +21,75 @@ public class ViewFactory {
     private AnchorPane ManageCustomersView;
 
 
+
+//  ------------  Admin --------------//
+    private final StringProperty adminSelectedMenuItem;
+
+    private AnchorPane ViewStatsView;
+    private AnchorPane ViewBillsView;
+    private AnchorPane UsersView;
+    private AnchorPane AddUsersView;
+
     public ViewFactory() {
+        this.adminSelectedMenuItem = new SimpleStringProperty("");
         this.operatorSelectedMenuItem = new SimpleStringProperty("");
     }
 
+
+
+    public StringProperty getAdminSelectedMenuItem() {
+        return adminSelectedMenuItem;
+    }
+    public AnchorPane getViewStatsView() {
+        if(ViewStatsView == null){
+            try {
+                ViewStatsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/ViewStats.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return ViewStatsView;
+    }
+    public AnchorPane getViewBillsView() {
+        if(ViewBillsView == null){
+            try {
+                ViewBillsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/ViewBills.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return ViewBillsView;
+    }
+    public AnchorPane getUsersView() {
+        if(UsersView == null){
+            try {
+                UsersView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Users.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return UsersView;
+    }
+    public AnchorPane getAddUsersView() {
+        if(AddUsersView == null){
+            try {
+                AddUsersView = new FXMLLoader(getClass().getResource("/Fxml/Admin/AddUsers.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return AddUsersView;
+    }
+
+    public void showAdmin() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Admin/Admin.fxml"));
+        AdminController adminController = new AdminController();
+        loader.setController(adminController);
+        createStage(loader);
+    }
+
+
+//  ---------------------  Operator ----------- //
     public StringProperty getOperatorSelectedMenuItem() {
         return operatorSelectedMenuItem;
     }
@@ -77,13 +145,11 @@ public class ViewFactory {
         createStage(loader);
     }
 
+
+//  ------------  Old Customer -----------------
+
     public void getPayBillView() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Customer/PayBill.fxml"));
-        createStage(loader);
-    }
-
-    public void showLoginWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
         createStage(loader);
     }
 
@@ -94,6 +160,12 @@ public class ViewFactory {
         createStage(loader);
     }
 
+
+
+    public void showLoginWindow(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+        createStage(loader);
+    }
 
 
     //    To avoid redundancy

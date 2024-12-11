@@ -1,25 +1,29 @@
 /* Region Selection Section */
 .region-selection {
     -fx-align-items: center;
-    -fx-gap: 10px;
+    -fx-spacing: 10px;
     -fx-background-color: #ffffff;
     -fx-border-radius: 8px;
 }
 
+
+.title {
+    -fx-font-size: 1.3em;
+    -fx-font-weight: bold;
+}
+
 .region {
     -fx-alignment:center;
-    -fx-background-color:#ffffffff;
-    -fx-border-color: #007bff;
-    -fx-border-radius: 8px;
+    -fx-border-radius:8px;
+    -fx-padding:10px;
+    -fx-spacing:20px;
 }
 .region Text{
     -fx-font-size:1.2em;
-    -fx-font-weight:bold;
 }
 .consumption-fields{
-    -fx-spacing:60px;
+    -fx-spacing:50px;
     -fx-alignment:center;
-    -fx-font-size:1.2em;
     -fx-font-weight:bold;
 }
 
