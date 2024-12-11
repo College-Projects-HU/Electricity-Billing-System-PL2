@@ -1,0 +1,32 @@
+
+
+
+.title {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+}
+
+
+.hboxes {
+    -fx-alignment: center-left;
+    -fx-spacing: 10px;
+    -fx-padding: 0 50px ;
+}
+
+.hboxes Label {
+    -fx-font-size: 1.2em;
+    -fx-font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

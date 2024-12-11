@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 public class OperatorMenuController implements Initializable {
     public Button collect_payment_btn;
     public Button view_bills_btn;
-    public Button set_tariffs_btn;
+    public Button tariffs_btn;
     public Button manage_customers_btn;
     public Button logout_btn;
 
@@ -22,6 +22,12 @@ public class OperatorMenuController implements Initializable {
     private void addListeners(){
         collect_payment_btn.setOnAction(e -> onCollectPayments());
         view_bills_btn.setOnAction(e -> onViewBills());
+        tariffs_btn.setOnAction(e -> onTariffs());
+        manage_customers_btn.setOnAction(e -> onManageCustomers());
+    }
+
+    private void onManageCustomers() {
+        Model.getInstance().getViewFactory().getOperatorSelectedMenuItem().set("Manage_Customers");
     }
 
 
@@ -32,5 +38,10 @@ public class OperatorMenuController implements Initializable {
     private void onViewBills() {
         Model.getInstance().getViewFactory().getOperatorSelectedMenuItem().set("View_Bills");
     }
+
+    private void onTariffs() {
+        Model.getInstance().getViewFactory().getOperatorSelectedMenuItem().set("View_Tariffs");
+    }
+
 
 }

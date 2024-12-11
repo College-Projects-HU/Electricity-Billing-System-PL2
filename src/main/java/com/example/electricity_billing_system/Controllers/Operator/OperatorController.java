@@ -15,6 +15,8 @@ public class OperatorController implements Initializable {
         Model.getInstance().getViewFactory().getOperatorSelectedMenuItem().addListener((observableValue, oldVal, newVal) -> {
             switch (newVal){
                 case "View_Bills" -> operator_parent.setCenter(Model.getInstance().getViewFactory().getRegionBillsView());
+                case "View_Tariffs" -> operator_parent.setCenter(Model.getInstance().getViewFactory().getTariffsView());
+                case "Manage_Customers" -> operator_parent.setCenter(Model.getInstance().getViewFactory().getManageCustomersView());
                 default -> operator_parent.setCenter(Model.getInstance().getViewFactory().getCollectPaymentView());
             }
         } );

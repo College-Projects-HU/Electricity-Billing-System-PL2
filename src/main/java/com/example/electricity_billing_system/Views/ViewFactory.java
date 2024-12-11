@@ -8,13 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class ViewFactory {
     private final StringProperty operatorSelectedMenuItem;
     private AnchorPane CollectPaymentView;
     private AnchorPane RegionBillsView;
+    private AnchorPane TariffsView;
+    private AnchorPane ManageCustomersView;
 
 
     public ViewFactory() {
@@ -23,6 +24,17 @@ public class ViewFactory {
 
     public StringProperty getOperatorSelectedMenuItem() {
         return operatorSelectedMenuItem;
+    }
+
+    public AnchorPane getManageCustomersView() {
+        if(ManageCustomersView == null){
+            try {
+                ManageCustomersView = new FXMLLoader(getClass().getResource("/Fxml/Operator/ManageCustomers.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return ManageCustomersView;
     }
 
     public AnchorPane getCollectPaymentView() {
@@ -47,6 +59,16 @@ public class ViewFactory {
         return RegionBillsView;
     }
 
+    public AnchorPane getTariffsView() {
+        if(TariffsView == null){
+            try {
+                TariffsView = new FXMLLoader(getClass().getResource("/Fxml/Operator/Tariffs.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return TariffsView;
+    }
 
     public void showOperator(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Operator/Operator.fxml"));
@@ -74,11 +96,11 @@ public class ViewFactory {
 
 
 
+    //    To avoid redundancy
     private void createStage(FXMLLoader loader){
         Scene scene = null;
         try {
             scene = new Scene(loader.load());
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -87,7 +109,6 @@ public class ViewFactory {
         stage.setTitle("Electricity Billing System");
         stage.show();
     }
-
     public void closeStage(Stage stage){
         stage.close();
     }

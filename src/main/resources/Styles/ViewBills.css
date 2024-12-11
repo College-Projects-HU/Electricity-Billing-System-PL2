@@ -1,15 +1,35 @@
 
+
+.container {
+    -fx-padding: 0 10px;
+}
+
 .title{
     -fx-font-size: 1.3em;
     -fx-font-weight: bold;
 }
 
 
+
+
 .region-selection {
-    -fx-padding: 0 30px;
+    -fx-padding: 0 20px;
     -fx-spacing: 10px;
 }
 
-.list-view .list-view  {
+.region-selection Label {
+    -fx-font-weight: bold;
+}
+
+
+
+
+.list-view .list-cell  {
     -fx-padding: 10px;
 }
+Button:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+
+

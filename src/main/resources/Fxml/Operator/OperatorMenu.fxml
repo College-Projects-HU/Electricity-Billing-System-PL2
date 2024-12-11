@@ -24,8 +24,8 @@
             <Button fx:id="collect_payment_btn" mnemonicParsing="false" text="Collect Payments"/>
             <Button fx:id="view_bills_btn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false"
                     text="View Bills"/>
-            <Button fx:id="set_tariffs_btn" layoutX="10.0" layoutY="45.0" mnemonicParsing="false"
-                    text="Set Tariffs"/>
+            <Button fx:id="tariffs_btn" layoutX="10.0" layoutY="45.0" mnemonicParsing="false"
+                    text="Tariffs"/>
             <Button fx:id="manage_customers_btn" layoutX="10.0" layoutY="80.0" mnemonicParsing="false"
                     text="Manage Customers"/>
         </VBox>
