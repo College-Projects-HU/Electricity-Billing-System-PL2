@@ -13,26 +13,36 @@ public class App extends Application {
 
 }
 /*
-Customer:
-
-
-
-
-
-
+User:
+-Get All Customers
+-Get Custom Customer(id)
+-Delete Customer
+-*Edit Customer
+-Add Customer
+-GetNumberOfCustomers
+-
 
 
 
 
 Bills:
+Get All Bills
+Get Customer Bills(id)
+Remove Bill
+Add Bill
+done:
+updateStatus
+Pay Bill(meter)
 
 
-
-
-
-
-
-
+Meters:
+Get All Meters
+Get spec Meter
+Remove spec Meter
+Add spec Meter
+Active ..
+deactivate..
+update reading
 
 
 

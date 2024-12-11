@@ -7,7 +7,6 @@ public class bill {
     private int billID;          // Unique identifier for the bill
     private int customerID;      // ID of the customer the bill is issued for
     private int reading;         // Monthly meter reading
-    private double Meter;
     private double consumption;  // Electricity consumption (calculated in units)
     private double amount;       // Total bill amount
     private String issueDate;    // Date when the bill was issued
@@ -59,13 +58,6 @@ public class bill {
 
     public void setReading(int reading) {
         this.reading = reading;
-    }
-
-    public double getMeter() {return Meter;
-    }
-
-    public void setMeter(double Meter) {
-        this.Meter = Meter;
     }
 
 
