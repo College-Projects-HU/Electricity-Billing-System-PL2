@@ -22,7 +22,7 @@ public class PayBillController  implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        OldCustomerMainController oldCustomerMainController = new OldCustomerMainController();
+        OldCustomerController oldCustomerMainController = new OldCustomerController();
 
 
     }

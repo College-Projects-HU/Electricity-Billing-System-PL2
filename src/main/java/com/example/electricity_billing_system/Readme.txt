@@ -21,3 +21,10 @@ controllers of the GUI like , which element to show when.
 
 -App
 the entry point of the application.
+
+
+
+TODO :
+ -Link logout buttons
+ - Old customer pages scenes
+ - back buttons for old customer scenes

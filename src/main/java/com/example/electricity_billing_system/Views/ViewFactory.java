@@ -1,7 +1,8 @@
 package com.example.electricity_billing_system.Views;
 
 import com.example.electricity_billing_system.Controllers.Admin.AdminController;
-import com.example.electricity_billing_system.Controllers.Customer.OldCustomerMainController;
+import com.example.electricity_billing_system.Controllers.Customer.OldCustomerController;
+import com.example.electricity_billing_system.Controllers.LoginController;
 import com.example.electricity_billing_system.Controllers.Operator.OperatorController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -12,6 +13,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViewFactory {
+//    Register
+    private AnchorPane RegisterView;
+
+//    Login
+    private AnchorPane LoginMainView;
+
 
 //   -------------------- Operator  ---------- //
     private final StringProperty operatorSelectedMenuItem;
@@ -154,17 +161,45 @@ public class ViewFactory {
     }
 
     public void showOldCustomerMainWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Customer/OldCustomerMain.fxml"));
-        OldCustomerMainController MainController = new OldCustomerMainController();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Customer/OldCustomer.fxml"));
+        OldCustomerController MainController = new OldCustomerController();
         loader.setController(MainController);
         createStage(loader);
     }
 
+//    New Customer
+
+    public AnchorPane showNewCustomerMainWindow(){
+        if(RegisterView == null){
+            try {
+                RegisterView = new FXMLLoader(getClass().getResource("/Fxml/Customer/NewCustomer.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return RegisterView;
+    }
 
 
+
+
+
+//    Login
     public void showLoginWindow(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Login.fxml"));
+        LoginController loginController = new LoginController();
+        loader.setController(loginController);
         createStage(loader);
+    }
+    public AnchorPane getLoginMainView() {
+        if(LoginMainView == null){
+            try {
+                LoginMainView = new FXMLLoader(getClass().getResource("/Fxml/LoginMain.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return LoginMainView;
     }
 
 
@@ -184,6 +219,7 @@ public class ViewFactory {
     public void closeStage(Stage stage){
         stage.close();
     }
+
 
 }
 

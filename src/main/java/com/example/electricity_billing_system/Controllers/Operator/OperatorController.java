@@ -12,7 +12,6 @@ public class OperatorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Model.getInstance().setOperatorParent(operator_parent);
         Model.getInstance().getViewFactory().getOperatorSelectedMenuItem().addListener((observableValue, oldVal, newVal) -> {
             switch (newVal){
                 case "View_Bills" -> operator_parent.setCenter(Model.getInstance().getViewFactory().getRegionBillsView());

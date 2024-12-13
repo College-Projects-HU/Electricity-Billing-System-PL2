@@ -6,7 +6,7 @@
   "amount" : 120.0,
   "issueDate" : "2024-11-01",
   "dueDate" : "2024-11-30",
-  "status" : "paid"
+  "status" : "Unpaid"
 }, {
   "billID" : 102,
   "customerID" : 2,

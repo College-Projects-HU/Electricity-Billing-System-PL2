@@ -6,8 +6,7 @@ import javafx.scene.layout.BorderPane;
 public class Model {
     private static Model model;
     private final ViewFactory viewFactory;
-    private BorderPane operatorParent;
-
+    private BorderPane BorderParent;
 
     private Model() {
         this.viewFactory = new ViewFactory();
@@ -25,11 +24,11 @@ public class Model {
         return viewFactory;
     }
 
-    public void setOperatorParent(BorderPane operatorParent) {
-        this.operatorParent = operatorParent;
+    public void setBorderParent(BorderPane BorderParent) {
+        this.BorderParent = BorderParent;
     }
 
-    public BorderPane getOperatorParent() {
-        return operatorParent;
+    public BorderPane getBorderParent() {
+        return BorderParent;
     }
 }
