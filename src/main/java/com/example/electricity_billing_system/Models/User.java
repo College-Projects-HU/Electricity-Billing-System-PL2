@@ -1,21 +1,36 @@
 package com.example.electricity_billing_system.Models;
 
+import com.example.electricity_billing_system.Models.OldCustomer;
+import com.example.electricity_billing_system.Utils.JsonUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.type.TypeReference;
+
+import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
+
 public class User {
     private String userName;
     private String userPassword;
     private String userRole;
     private int userID;
-    private static int nextUserID = 1;
-    
+    @JsonIgnore
+    private List<OldCustomer> allCustomers;
+    @JsonIgnore
+    private final String path = System.getProperty("user.dir") + "\\src\\main\\resources\\data\\" + "Customers.json";
+
     // Static set to store unique userIDs
     //HashSet uses a hash table for storage, which provides constant
     //time (O(1)) complexity for lookups and insertions.
-    private static Set<Integer> userIDs = new HashSet<>();
-    
+
     // Constructor to initialize userID automatically
-    public User() {
-        this.userID = generateUniqueUserID();
+    public User() {}
+    // Constructor to initialize userID automatically
+    public User(int userID ,String userName,String userPassword) {
+        this.userID = userID;
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.userRole = "user";
     }
     
     
@@ -46,49 +61,95 @@ public class User {
        return userID;
     }
     
-    // Method to generate a unique userID by incrementing the counter
-    private int generateUniqueUserID() {
-        int newUserID = nextUserID;
 
-        // Ensure the ID is unique
-        while (userIDs.contains(newUserID)) {
-            newUserID++;
-        }
-        userIDs.add(newUserID);
-        nextUserID = newUserID + 1;
-
-        return newUserID;
-    }
-    
     // CreatAccount
-    public void createAccount(String name, String password, String role) {
-        setUserName(name);
-        setUserPassword(password);
-        setUserRole(role);
-        System.out.println("Account Created Successfully :) ");
+    public boolean createAccount(String name, String password, String role) {
+        OldCustomer customer = new OldCustomer();
+        customer.setUserName(name);
+        customer.setUserPassword(password);
+        customer.setUserRole(role);
+        allCustomers.add(customer);
+        return saveToJson();
     }
 
-    
-    //Login
-    public boolean Login(String name, String password) {
-        if (userName == null || userPassword == null) {
-            System.out.println("Account does not exist. Please create an account first.");
-            return false;
-        }
+    public List<OldCustomer> allCustomers() throws IOException {
+        allCustomers = JsonUtil.readFromJsonFile(path, new TypeReference<>() {});
+        return allCustomers;
+    }
 
-        if (this.userName.equals(name) && this.userPassword.equals(password)) {
-            System.out.println("Login Successful :)");
-            return true;
-        } else {
-            System.out.println("Invalid UserName or Password, please try again :( ");
-            return false;
-        }
-}
 
-    
+
     //Logout
-    public void Logout(){
-        System.out.println("Logged Out Successfully :)");
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public int getLAST_ID() {
+        return allCustomers.size();
+    }
+
+    public List<OldCustomer> getCustomers() {
+        return allCustomers;
+    }
+    public OldCustomer getCustomerById(int id) {
+        Optional<OldCustomer> customer = allCustomers.stream().filter(c -> c.getUserID() == (id))
+                .findFirst();
+        return customer.orElse(null);
+    }
+
+    public boolean addCustomer(OldCustomer customer) {
+        allCustomers.add(customer);
+        return saveToJson();
+    }
+
+    // Update an existing user
+    public boolean updateUser(OldCustomer updatedUser) {
+        for (int i = 0; i < allCustomers.size(); i++) {
+            if (allCustomers.get(i).getUserID() == updatedUser.getUserID()) {
+                allCustomers.set(i, updatedUser);
+                return saveToJson();
+            }
+        }
+        return false;
+    }
+
+    // Delete a user by their userID
+    public boolean deleteUser(int userID) {
+        for (int i = 0; i < allCustomers.size(); i++) {
+            if (allCustomers.get(i).getUserID() == userID) {
+                allCustomers.remove(i);
+                return saveToJson();
+            }
+        }
+        System.out.println("User not found!");
+        return false;
+    }
+
+  /*  public List<bill> getCustomerBills(int id) {
+        BillingService billingService = new BillingService();
+        return billingService.getAllBills()
+                .stream()
+                .filter(b -> b.getCustomerID() ==(id))
+                .sorted(Comparator.comparing(bill::getDueDate)) // Sort by due date
+                .collect(Collectors.toList());
+    }*/
+    private boolean saveToJson() {
+        try {
+            JsonUtil.writeToJsonFile(allCustomers,path);
+            return true;
+        } catch (IOException e) {
+            System.out.println("Failed to save customers to file: " + e.getMessage());
+        }
+        return false;
     }
 }
 

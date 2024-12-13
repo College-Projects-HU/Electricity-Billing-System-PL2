@@ -1,20 +1,24 @@
 package com.example.electricity_billing_system.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
-class OldCustomer {
-    private String name;
+public class OldCustomer extends User {
     private String address;
     private String email;
     private String phoneNumber;
     private String meterNumber;
     private double outstandingBillAmount;
-    private final List<String> complaints;
 
-    public OldCustomer(String name, String address, String email, String phoneNumber, String meterNumber) {
-        this.name = name;
+    @JsonProperty("complaints") // Ensure Jackson recognizes this field when deserializing from JSON
+    private List<String> complaints;
+    public OldCustomer(){
+        super();
+    }
+    public OldCustomer(String address, String email, String phoneNumber, String meterNumber) {
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -22,14 +26,6 @@ class OldCustomer {
         this.outstandingBillAmount = 0.0;
         this.complaints = new ArrayList<>();
     }
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -66,6 +62,34 @@ class OldCustomer {
         return outstandingBillAmount;
     }
 
+    @Override
+    public String getUserName() {
+        return super.getUserName();
+    }
+
+    @Override
+    public String getUserPassword() {
+        return super.getUserPassword();
+    }
+
+    @Override
+    public int getUserID() {
+        return super.getUserID();
+    }
+    @Override
+    public void setUserName(String name) {
+        super.setUserName(name);
+    }
+
+    @Override
+    public void setUserPassword(String password) {
+        super.setUserPassword(password);
+    }
+    @Override
+    public void setUserRole(String role) {
+        super.setUserRole(role);
+    }
+
     // Method to view the bill
     public void viewBill() {
         System.out.println("Bill Details for Meter Number: " + meterNumber);
@@ -85,7 +109,7 @@ class OldCustomer {
 
     // Method to update the customer's details
     public void updateDetails(String name, String address, String email, String phoneNumber) {
-        this.name = name;
+        super.setUserName(name);
         this.address = address;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -102,29 +126,6 @@ class OldCustomer {
         String complaintMessage = "Complaint for Bill ID " + billID + ": " + complaint;
         complaints.add(complaintMessage);
         System.out.println("Complaint lodged successfully: " + complaintMessage);
-    }
-
-
-    // Main method for testing
-    public static void main(String[] args) {
-        OldCustomer customer1 = new OldCustomer("John Doe", "123 Elm Street", "johndoe@email.com", "123-456-7890", "MTR123456");
-
-        // Viewing the bill
-        customer1.viewBill();
-
-        // Paying the bill
-        customer1.payBill(101, 50.0);
-
-        // Updating customer details
-        customer1.updateDetails("Johnathan Doe", "456 Oak Street", "johnathan@email.com", "987-654-3210");
-
-        // Entering a meter reading
-        customer1.enterReading(350.0);
-
-        // Lodging a complaint
-        customer1.complainAboutBill(101, "Incorrect billing amount. Too high.");
-
-
     }
 }
 

@@ -85,17 +85,6 @@ public class Admin extends User {
         System.out.println("User not found!");
     }
 
-    // Delete a user by their userID
-    public void deleteUser(int userID) {
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getUserID() == userID) {
-                System.out.println("User deleted successfully: " + users.get(i).getUserName());
-                users.remove(i);
-                return;
-            }
-        }
-        System.out.println("User not found!");
-    }
 }
 
 /*

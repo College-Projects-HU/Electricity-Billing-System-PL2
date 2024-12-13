@@ -13,13 +13,19 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Model.getInstance().getViewFactory().showLoginWindow();
+<<<<<<< Updated upstream
 //        bill billClass = new bill();
 //        List<bill> allBills = billClass.readBillsData();
 //        billClass.updateStatus(allBills,1,"paid");
 
+=======
+>>>>>>> Stashed changes
     }
 
 }
+
+
+
 
 /*
 User:
