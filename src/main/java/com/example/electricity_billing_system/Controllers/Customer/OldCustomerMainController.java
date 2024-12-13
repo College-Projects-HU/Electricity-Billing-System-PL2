@@ -22,12 +22,27 @@ public class OldCustomerMainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pay_bill_btn.setOnAction(event -> viewPayBill());
+        bill_details_btn.setOnAction(event -> viewBillDetails());
+        monthly_reading_btn.setOnAction(event -> viewMonthlyReading());
+        complaint_btn.setOnAction(event -> viewComplaintForm());
     }
 
+
+
+
     private void viewPayBill() {
-        Stage stage = (Stage)error_msg.getScene().getWindow();
-        Model.getInstance().getViewFactory().closeStage(stage);
-        Model.getInstance().getViewFactory().getPayBillView();
+        Model.getInstance().getBorderParent().setCenter(Model.getInstance().getViewFactory().getPayBillView());
+    }
+
+    private void viewBillDetails() {
+        Model.getInstance().getBorderParent().setCenter(Model.getInstance().getViewFactory().getBillDetailsView());
+
+    }
+    private void viewMonthlyReading() {
+        Model.getInstance().getBorderParent().setCenter(Model.getInstance().getViewFactory().getMonthlyReadingView());
+    }
+    private void viewComplaintForm() {
+        Model.getInstance().getBorderParent().setCenter(Model.getInstance().getViewFactory().getComplaintForm());
     }
 
 

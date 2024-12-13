@@ -1,5 +1,6 @@
 package com.example.electricity_billing_system.Controllers.Customer;
 
+import com.example.electricity_billing_system.Models.Model;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -22,8 +23,12 @@ public class PayBillController  implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        OldCustomerController oldCustomerMainController = new OldCustomerController();
+        back_btn.setOnAction(e -> backToMain());
 
 
+    }
+
+    private void backToMain() {
+        Model.getInstance().getBorderParent().setCenter(Model.getInstance().getViewFactory().getOldCustomerMainView());
     }
 }

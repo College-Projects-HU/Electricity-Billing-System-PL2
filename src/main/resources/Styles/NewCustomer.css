@@ -4,7 +4,7 @@
 .header {
     -fx-background-color: white;
     -fx-padding: 20px;
-    -fx-alignment: left;
+    /*-fx-alignment: left;*/
 }
 
 .data-container {

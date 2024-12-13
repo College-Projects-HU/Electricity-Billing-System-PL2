@@ -7,20 +7,28 @@ import com.example.electricity_billing_system.Controllers.Operator.OperatorContr
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ViewFactory {
-//    Register
+//    Register variables
     private AnchorPane RegisterView;
 
-//    Login
+//    Login variables
     private AnchorPane LoginMainView;
 
+//    Old Customer
+    private AnchorPane PayBillView;
+    private AnchorPane BillDetailsView;
+    private AnchorPane MonthlyReadingView;
+    private AnchorPane ComplaintFormView;
+    private AnchorPane OldCustomerMainView;
 
-//   -------------------- Operator  ---------- //
+
+//   Operator variables
     private final StringProperty operatorSelectedMenuItem;
     private AnchorPane CollectPaymentView;
     private AnchorPane RegionBillsView;
@@ -29,7 +37,7 @@ public class ViewFactory {
 
 
 
-//  ------------  Admin --------------//
+//  Admin variables
     private final StringProperty adminSelectedMenuItem;
 
     private AnchorPane ViewStatsView;
@@ -37,12 +45,17 @@ public class ViewFactory {
     private AnchorPane UsersView;
     private AnchorPane AddUsersView;
 
+
+
+//    Main constructor
     public ViewFactory() {
         this.adminSelectedMenuItem = new SimpleStringProperty("");
         this.operatorSelectedMenuItem = new SimpleStringProperty("");
     }
 
 
+
+//    Admin functions
 
     public StringProperty getAdminSelectedMenuItem() {
         return adminSelectedMenuItem;
@@ -96,7 +109,7 @@ public class ViewFactory {
     }
 
 
-//  ---------------------  Operator ----------- //
+//  Operator functions
     public StringProperty getOperatorSelectedMenuItem() {
         return operatorSelectedMenuItem;
     }
@@ -153,11 +166,58 @@ public class ViewFactory {
     }
 
 
-//  ------------  Old Customer -----------------
+//  Old customer functions
 
-    public void getPayBillView() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Customer/PayBill.fxml"));
-        createStage(loader);
+    public AnchorPane getPayBillView() {
+        if(PayBillView == null){
+            try {
+                PayBillView = new FXMLLoader(getClass().getResource("/Fxml/Customer/PayBill.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return PayBillView;
+    }
+    public AnchorPane getBillDetailsView() {
+        if(BillDetailsView == null){
+            try {
+                BillDetailsView = new FXMLLoader(getClass().getResource("/Fxml/Customer/BillHistory.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return BillDetailsView;
+    }
+    public AnchorPane getMonthlyReadingView() {
+        if(MonthlyReadingView == null){
+            try {
+                MonthlyReadingView = new FXMLLoader(getClass().getResource("/Fxml/Customer/MonthlyReading.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return MonthlyReadingView;
+    }
+    public AnchorPane getComplaintForm() {
+        if(ComplaintFormView == null){
+            try {
+                ComplaintFormView = new FXMLLoader(getClass().getResource("/Fxml/Customer/ComplaintForm.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return ComplaintFormView;
+    }
+
+    public AnchorPane getOldCustomerMainView() {
+        if(OldCustomerMainView == null){
+            try {
+                OldCustomerMainView = new FXMLLoader(getClass().getResource("/Fxml/Customer/OldCustomerMain.fxml")).load();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return OldCustomerMainView;
     }
 
     public void showOldCustomerMainWindow(){
@@ -167,9 +227,9 @@ public class ViewFactory {
         createStage(loader);
     }
 
-//    New Customer
+//    New Customer functions
 
-    public AnchorPane showNewCustomerMainWindow(){
+    public AnchorPane getNewCustomerView(){
         if(RegisterView == null){
             try {
                 RegisterView = new FXMLLoader(getClass().getResource("/Fxml/Customer/NewCustomer.fxml")).load();

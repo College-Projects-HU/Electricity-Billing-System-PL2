@@ -28,11 +28,11 @@ public class LoginMainController implements Initializable {
     private void login() {
         Stage stage = (Stage)error_lbl.getScene().getWindow();
         Model.getInstance().getViewFactory().closeStage(stage);
-        Model.getInstance().getViewFactory().showOldCustomerMainWindow();
+        Model.getInstance().getViewFactory().showAdmin();
     }
 
     private void register(){
-        Model.getInstance().getBorderParent().setCenter(Model.getInstance().getViewFactory().showNewCustomerMainWindow());
+        Model.getInstance().getBorderParent().setCenter(Model.getInstance().getViewFactory().getNewCustomerView());
     }
 
 }

@@ -3,6 +3,7 @@ package com.example.electricity_billing_system.Controllers.Operator;
 import com.example.electricity_billing_system.Models.Model;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,10 @@ public class OperatorMenuController implements Initializable {
         view_bills_btn.setOnAction(e -> onViewBills());
         tariffs_btn.setOnAction(e -> onTariffs());
         manage_customers_btn.setOnAction(e -> onManageCustomers());
+        logout_btn.setOnAction(event -> logout());
+
     }
+
 
     private void onManageCustomers() {
         Model.getInstance().getViewFactory().getOperatorSelectedMenuItem().set("Manage_Customers");
@@ -41,6 +45,11 @@ public class OperatorMenuController implements Initializable {
 
     private void onTariffs() {
         Model.getInstance().getViewFactory().getOperatorSelectedMenuItem().set("View_Tariffs");
+    }
+    private void logout() {
+        Stage stage = (Stage)logout_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showLoginWindow();
     }
 
 

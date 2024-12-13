@@ -4,6 +4,7 @@ import com.example.electricity_billing_system.Models.Model;
 import javafx.event.Event;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class AdminMenuController implements Initializable {
     public Button view_stat_btn;
@@ -22,7 +23,10 @@ public class AdminMenuController implements Initializable {
         view_bill_btn.setOnAction(event -> onViewBills());
         users_btn.setOnAction(event -> onUsers());
         add_user_btn.setOnAction(event -> onAddUsers());
+        logout_btn.setOnAction(event -> logout());
     }
+
+
 
 
     private void onViewStats() {
@@ -41,6 +45,11 @@ public class AdminMenuController implements Initializable {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("Add_Users");
     }
 
+    private void logout() {
+        Stage stage = (Stage)logout_btn.getScene().getWindow();
+        Model.getInstance().getViewFactory().closeStage(stage);
+        Model.getInstance().getViewFactory().showLoginWindow();
+    }
 
 }
 
