@@ -183,7 +183,25 @@ public class bill {
             }
         }
     }
-    
+
+    public void deletebill(list<bill>AllBills,int billID) {
+        for (int i = 0; i < ALlBills.size(); i++) {
+            if (ALlBills.get(i).getBillID() == billID) {
+                ALlBills.remove(i);
+                System.out.println("removed with id: " + i);
+                saveToJson(ALlBills);
+                return;
+            }
+        }
+        System.out.println("User not found!");
+    }
+
+    public boolean addBill(list<bill>AllBills) {
+        bill Bill = new Bill( int billID, int customerID, int reading, double consumption, double amount, String
+        issueDate, String dueDate, String status);
+        return saveToJson(AllBills);
+    }
+
 
 
 
