@@ -3,15 +3,14 @@
     "userID" : 1,
     "userName" : "Jane Smith",
     "userPassword" : "securepass",
-    "userRole" : "Admin",
+    "userRole" : null,
     "address" : "456 Oak Avenue",
     "email" : "jane.smith@example.com",
     "phoneNumber" : "555-5678",
     "meterNumber" : "MTR002",
     "outstandingBillAmount" : 250.75,
     "complaints" : [ "Incorrect billing amount", "Meter reading error" ]
-  },
-  {
+  }, {
   "userID" : 2,
   "userName" : "John Doe",
   "userPassword" : "password123",

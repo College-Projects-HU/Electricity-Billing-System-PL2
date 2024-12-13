@@ -1,13 +1,11 @@
 package com.example.electricity_billing_system.Models;
 
-import com.example.electricity_billing_system.Models.OldCustomer;
 import com.example.electricity_billing_system.Utils.JsonUtil;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class User {
     private String userName;
@@ -17,14 +15,18 @@ public class User {
     @JsonIgnore
     private List<OldCustomer> allCustomers;
     @JsonIgnore
-    private final String path = System.getProperty("user.dir") + "\\src\\main\\resources\\data\\" + "Customers.json";
+    private final String path = System.getProperty("user.dir") + "\\src\\main\\resources\\Data\\" + "Customer.json";
 
     // Static set to store unique userIDs
     //HashSet uses a hash table for storage, which provides constant
     //time (O(1)) complexity for lookups and insertions.
 
     // Constructor to initialize userID automatically
-    public User() {}
+    @JsonIgnore
+    public User(boolean initialize) throws IOException {
+            allCustomers = JsonUtil.readFromJsonFile(path, new TypeReference<>() {});
+    }
+    public User(){}
     // Constructor to initialize userID automatically
     public User(int userID ,String userName,String userPassword) {
         this.userID = userID;
@@ -73,7 +75,6 @@ public class User {
     }
 
     public List<OldCustomer> allCustomers() throws IOException {
-        allCustomers = JsonUtil.readFromJsonFile(path, new TypeReference<>() {});
         return allCustomers;
     }
 
@@ -123,15 +124,16 @@ public class User {
     }
 
     // Delete a user by their userID
-    public boolean deleteUser(int userID) {
+    public void deleteUser(int userID) {
         for (int i = 0; i < allCustomers.size(); i++) {
             if (allCustomers.get(i).getUserID() == userID) {
                 allCustomers.remove(i);
-                return saveToJson();
+                System.out.println("removed is " + i);
+                saveToJson();
+                return;
             }
         }
         System.out.println("User not found!");
-        return false;
     }
 
   /*  public List<bill> getCustomerBills(int id) {
@@ -145,11 +147,11 @@ public class User {
     private boolean saveToJson() {
         try {
             JsonUtil.writeToJsonFile(allCustomers,path);
-            return true;
         } catch (IOException e) {
-            System.out.println("Failed to save customers to file: " + e.getMessage());
+            System.out.println("errrorr" + e.getMessage());
+            throw new RuntimeException(e);
         }
-        return false;
+        return true;
     }
 }
 

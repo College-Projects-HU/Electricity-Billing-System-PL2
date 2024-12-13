@@ -29,7 +29,6 @@ public class JsonUtil {
         }
     }
 
-    // Method for writing JSON to a file
     public static <T> void writeToJsonFile(T data, String filePath) throws IOException {
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath), data);
     }

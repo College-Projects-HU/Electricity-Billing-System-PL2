@@ -1,6 +1,7 @@
 package com.example.electricity_billing_system;
 
 import com.example.electricity_billing_system.Models.Model;
+import com.example.electricity_billing_system.Models.User;
 import com.example.electricity_billing_system.Models.bill;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -13,13 +14,6 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Model.getInstance().getViewFactory().showLoginWindow();
-<<<<<<< Updated upstream
-//        bill billClass = new bill();
-//        List<bill> allBills = billClass.readBillsData();
-//        billClass.updateStatus(allBills,1,"paid");
-
-=======
->>>>>>> Stashed changes
     }
 
 }
