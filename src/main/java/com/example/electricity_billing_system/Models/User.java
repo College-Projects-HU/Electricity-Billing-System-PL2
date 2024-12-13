@@ -22,9 +22,9 @@ public class User {
     //time (O(1)) complexity for lookups and insertions.
 
     // Constructor to initialize userID automatically
-    @JsonIgnore
-    public User(boolean initialize) throws IOException {
-            allCustomers = JsonUtil.readFromJsonFile(path, new TypeReference<>() {});
+    public User(int initialize) throws IOException {
+        allCustomers = JsonUtil.readFromJsonFile(path, new TypeReference<>() {});
+        System.out.println(allCustomers.getLast().getEmail());
     }
     public User(){}
     // Constructor to initialize userID automatically
@@ -82,34 +82,22 @@ public class User {
 
     //Logout
 
-
-
-
-
-
-
-
-
-
-
-
-
-    public int getLAST_ID() {
-        return allCustomers.size();
-    }
+    @JsonIgnore
 
     public List<OldCustomer> getCustomers() {
         return allCustomers;
     }
+    @JsonIgnore
+
     public OldCustomer getCustomerById(int id) {
         Optional<OldCustomer> customer = allCustomers.stream().filter(c -> c.getUserID() == (id))
                 .findFirst();
         return customer.orElse(null);
     }
 
-    public boolean addCustomer(OldCustomer customer) {
+    public void addCustomer(OldCustomer customer) {
         allCustomers.add(customer);
-        return saveToJson();
+        saveToJson();
     }
 
     // Update an existing user
@@ -128,7 +116,7 @@ public class User {
         for (int i = 0; i < allCustomers.size(); i++) {
             if (allCustomers.get(i).getUserID() == userID) {
                 allCustomers.remove(i);
-                System.out.println("removed is " + i);
+                System.out.println("removed with id: " + i);
                 saveToJson();
                 return;
             }

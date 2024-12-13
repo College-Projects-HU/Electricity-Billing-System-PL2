@@ -1,6 +1,7 @@
 package com.example.electricity_billing_system;
 
 import com.example.electricity_billing_system.Models.Model;
+import com.example.electricity_billing_system.Models.OldCustomer;
 import com.example.electricity_billing_system.Models.User;
 import com.example.electricity_billing_system.Models.bill;
 import javafx.application.Application;
@@ -14,9 +15,11 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Model.getInstance().getViewFactory().showLoginWindow();
-        bill Bills=new bill();
-        List<bill> AllBills = Bills.readBillsData();
-        Bills.getSpecificBillDetails(AllBills,1);
+        User user = new User(1);
+        OldCustomer customer = new OldCustomer();
+        customer.setUserPassword("test");
+        customer.setUserName("name");
+        user.deleteUser(1);
     }
 }
 
