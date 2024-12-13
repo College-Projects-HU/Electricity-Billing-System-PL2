@@ -15,8 +15,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         Model.getInstance().getViewFactory().showLoginWindow();
         bill Bills=new bill();
-        List<bill> AllBills = List.of();
-        Bills.getAllBillsDetails(AllBills);
+        List<bill> AllBills = Bills.readBillsData();
+        Bills.getSpecificBillDetails(AllBills,1);
     }
 }
 
