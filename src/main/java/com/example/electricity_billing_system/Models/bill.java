@@ -126,25 +126,6 @@ public class bill {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private boolean saveToJson(List<bill> bills) {
         try {
             String billFile = System.getProperty("user.dir") + "\\src\\main\\resources\\" + "Data\\Bills.json";
@@ -172,7 +153,37 @@ public class bill {
         System.out.println("Bill status updated to: " + this.status);
     }
 
+   public void getAllBillsDetails(List<bill> AllBills){
+       for (int i = 0; i < AllBills.size(); i++) {
+           System.out.println("Bill Details:");
+           System.out.println("Bill ID: " + billID);
+           System.out.println("Customer ID: " + customerID);
+           System.out.println("Reading: " + reading);
+           System.out.println("Consumption: " + consumption + " units");
+           System.out.println("Amount: " + amount);
+           System.out.println("Issue Date: " + issueDate);
+           System.out.println("Due Date: " + dueDate);
+           System.out.println("Status: " + status);
+       }
+   }
 
+    public void getSpecificBillDetails(List<bill> AllBills,int billdID) {
+        for (int i = 0; i < AllBills.size(); i++) {
+            if (AllBills.get(i).getBillID() == billdID) {
+                System.out.println("Bill Details:");
+                System.out.println("Bill ID: " + billID);
+                System.out.println("Customer ID: " + customerID);
+                System.out.println("Reading: " + reading);
+                System.out.println("Consumption: " + consumption + " units");
+                System.out.println("Amount: " + amount);
+                System.out.println("Issue Date: " + issueDate);
+                System.out.println("Due Date: " + dueDate);
+                System.out.println("Status: " + status);
+                return;
+            }
+        }
+    }
+    
 
 
 
@@ -200,18 +211,7 @@ public class bill {
     }
 
 
-    // Method to display all bill details
-    public void getBillDetails() {
-        System.out.println("Bill Details:");
-        System.out.println("Bill ID: " + billID);
-        System.out.println("Customer ID: " + customerID);
-        System.out.println("Reading: " + reading);
-        System.out.println("Consumption: " + consumption + " units");
-        System.out.println("Amount: " + amount);
-        System.out.println("Issue Date: " + issueDate);
-        System.out.println("Due Date: " + dueDate);
-        System.out.println("Status: " + status);
-    }
+
 
 
 }
