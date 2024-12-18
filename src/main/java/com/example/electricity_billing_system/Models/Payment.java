@@ -6,7 +6,6 @@ public class Payment {
     private int customerID;       // ID of the customer making the payment
     private double amount;        // Payment amount
     private String paymentDate;   // Date of the payment
-    private String paymentMethod; // Method of payment (e.g., Credit Card, Cash)
     private String status;        // Current status of the payment (e.g., "Pending", "Completed")
 
     // Constructor: Initializes the Payment object with given details
@@ -15,7 +14,6 @@ public class Payment {
         this.customerID = customerID;         // Set customer ID
         this.amount = amount;                 // Set payment amount
         this.paymentDate = paymentDate;       // Set payment date
-        this.paymentMethod = paymentMethod;   // Set payment method
         this.status = "pending";                 // Set initial status (e.g., "Pending")
     }
 
@@ -31,9 +29,6 @@ public class Payment {
 
     public String getPaymentDate() { return paymentDate; }
     public void setPaymentDate(String paymentDate) { this.paymentDate = paymentDate; }
-
-    public String getPaymentMethod() { return paymentMethod; }
-    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
@@ -77,7 +72,6 @@ public class Payment {
         System.out.println("Customer ID: " + customerID);       // Display customer ID
         System.out.println("Amount: " + amount);               // Display payment amount
         System.out.println("Payment Date: " + paymentDate);     // Display payment date
-        System.out.println("Payment Method: " + paymentMethod); // Display payment method
         System.out.println("Status: " + status);               // Display payment status
     }
 }

@@ -15,7 +15,7 @@
    <HBox alignment="CENTER" layoutX="-1.0" layoutY="81.0" prefHeight="100.0" prefWidth="600.0" styleClass="hboxes" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label text="Enter Meter Code :" />
       <TextField fx:id="meter_code_fld" />
-      <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-message" text="error" />
+      <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-message" text="" />
       <Button fx:id="calculate_btn" mnemonicParsing="false" text="Calculate" />
    </HBox>
    <HBox alignment="CENTER_LEFT" layoutX="-4.0" layoutY="163.0" prefHeight="100.0" prefWidth="600.0" styleClass="hboxes" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0">

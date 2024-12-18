@@ -10,16 +10,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.List;
 
+     /*
+     * The app starts here
+     * */
 public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
         Model.getInstance().getViewFactory().showLoginWindow();
-        User user = new User(1);
-        OldCustomer customer = new OldCustomer();
-        customer.setUserPassword("test");
-        customer.setUserName("name");
-        user.deleteUser(1);
+        //User user = new User(1);
+        //List<OldCustomer> customers = user.getCustomers();
     }
 }
 

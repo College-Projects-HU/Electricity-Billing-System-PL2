@@ -39,9 +39,7 @@
     </HBox>
     <HBox layoutY="161.0" prefHeight="100.0" prefWidth="450.0" styleClass="estimated-bill"
           AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-        <Label text="Estimated Bill Amount :"/>
-        <Text fx:id="estimated_bill_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="350"/>
-        <FontAwesomeIconView glyphName="DOLLAR"/>
+        <Text fx:id="status_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="350"/>
     </HBox>
     <VBox layoutX="33.0" layoutY="227.0" prefHeight="130.0" prefWidth="450.0" styleClass="submit-button"
           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

@@ -1,17 +1,46 @@
 package com.example.electricity_billing_system.Models;
 
+import com.example.electricity_billing_system.Utils.JsonUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.type.TypeReference;
+
+import java.io.IOException;
+import java.util.List;
+
 public class Meter {
+
     // Attributes (fields)
     private String meterCode; // رمز العداد
-    private Region region;     // المنطقة التي ينتمي لها العداد (تم تغييرها إلى Region)
-    private double currentReading; // القراءة الحالية للعداد
+    private String region;     // المنطقة التي ينتمي لها العداد (تم تغييرها إلى Region)
+    private double monthlyReading; // القراءة الحالية للعداد
     private boolean isActive; // حالة العداد (نشط أو متوقف)
+    @JsonIgnore
+    private List<Meter> meters;
+    @JsonIgnore
+    private final String path = System.getProperty("user.dir") + "\\src\\main\\resources\\Data\\" + "Meters.json";
+
+    // Static set to store unique userIDs
+    //HashSet uses a hash table for storage, which provides constant
+    //time (O(1)) complexity for lookups and insertions.
+
+    // Constructor to initialize userID automatically
+    public Meter(int initialize) {
+        try {
+            meters = JsonUtil.readFromJsonFile(path, new TypeReference<>() {
+            });
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Meter() {
+    }
 
     // Constructor
-    public Meter(String meterCode, Region region) {
+    public Meter(String meterCode, String region, double monthlyReading, boolean isActive) {
         this.meterCode = meterCode;
         this.region = region;
-        this.currentReading = 0.0; // القراءة الافتراضية
+        this.monthlyReading = 0.0; // القراءة الافتراضية
         this.isActive = true;      // العداد نشط افتراضيًا
     }
 
@@ -24,34 +53,40 @@ public class Meter {
         this.meterCode = meterCode;
     }
 
-    public Region getRegion() {
+    public String getRegion() {
         return region;
     }
 
-    public void setRegion(Region region) {
-        this.region = region; 
+    public void setRegion(String region) {
+        this.region = region;
     }
 
-    public double getCurrentReading() {
-        return currentReading;
+    public double getMonthlyReading() {
+        return monthlyReading;
     }
 
-    public void setCurrentReading(double currentReading) {
-        this.currentReading = currentReading;
+    public void setMonthlyReading(double monthlyReading) {
+        this.monthlyReading = monthlyReading;
     }
 
-    public boolean isActive() {
+    public boolean getIsActive() {
         return isActive;
     }
 
-    public void setActive(boolean isActive) {
+    public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
 
     // Methods
-    public void updateReading(double newReading) {
-        if (newReading >= currentReading) {
-            this.currentReading = newReading;
+    public void updateReading(Meter meter,double newReading) {
+        for (int i = 0; i < meters.size(); i++) {
+            if (meters.get(i).getMeterCode().equals(meter.getMeterCode())) {
+                meters.get(i).setMonthlyReading(newReading);
+                saveToJson();
+            }
+        }
+        if (newReading >= monthlyReading) {
+            this.monthlyReading = newReading;
         } else {
             System.out.println("Error: New reading cannot be less than the current reading!");
         }
@@ -67,11 +102,49 @@ public class Meter {
         System.out.println("Meter " + meterCode + " has been activated.");
     }
 
+    /*
+     *  TODO : Check
+     */
+
+
+    private boolean saveToJson() {
+        try {
+            JsonUtil.writeToJsonFile(meters, path);
+        } catch (IOException e) {
+            System.out.println("errrorr" + e.getMessage());
+            throw new RuntimeException(e);
+        }
+        return true;
+    }
+
     @Override
     public String toString() {
         return "Meter Code: " + meterCode +
-               ", Region: " + region.toString() +  // نستخدم toString() من فئة Region
-               ", Current Reading: " + currentReading +
-               ", Active: " + isActive;
+                ", Region: " + region.toString() +  // نستخدم toString() من فئة Region
+                ", Current Reading: " + monthlyReading +
+                ", Active: " + isActive;
     }
+
+    public void getAllMetersDetails(List<Meter> meters) {
+        for (int i = 0; i < meters.size(); i++) {
+            System.out.println("Meter Details:");
+            System.out.println("Meter code: " + meterCode);
+            System.out.println("Region: " + region);
+            System.out.println("current Reading: " + monthlyReading);
+            System.out.println("isActive: " + isActive);
+
+        }
+    }
+
+    public Meter checkMeterExist(String meterCode) {
+        for (Meter meter : meters) {
+            if (meter.getMeterCode().equals(meterCode)) {
+                return meter;
+            }
+        }
+        return null;
+    }
+
+
+
 }

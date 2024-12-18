@@ -7,8 +7,8 @@ import com.example.electricity_billing_system.Controllers.Operator.OperatorContr
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -265,7 +265,7 @@ public class ViewFactory {
 
     //    To avoid redundancy
     private void createStage(FXMLLoader loader){
-        Scene scene = null;
+        Scene scene;
         try {
             scene = new Scene(loader.load());
         } catch (IOException e) {
@@ -273,6 +273,8 @@ public class ViewFactory {
         }
         Stage stage = new Stage();
         stage.setScene(scene);
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/icon.png"))));
+        stage.setResizable(false);
         stage.setTitle("Electricity Billing System");
         stage.show();
     }

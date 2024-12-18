@@ -2,15 +2,18 @@ package com.example.electricity_billing_system.Models;
 
 
 import com.example.electricity_billing_system.Utils.JsonUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 //bill class
 public class bill {
     // Attributes (private to ensure encapsulation)
-
+    private String meterCode;       // رمز العداد
     private int billID;          // Unique identifier for the bill
     private int customerID;      // ID of the customer the bill is issued for
     private int reading;         // Monthly meter reading
@@ -19,10 +22,28 @@ public class bill {
     private String issueDate;    // Date when the bill was issued
     private String dueDate;      // Due date for bill payment
     private String status;       // Current status of the bill (e.g., "Paid", "Unpaid", "Overdue")
+    @JsonIgnore
+    private List<bill> Bills;
+    @JsonIgnore
+    private final String path = System.getProperty("user.dir") + "\\src\\main\\resources\\Data\\" + "Bills.json";
+
+    // Static set to store unique userIDs
+    //HashSet uses a hash table for storage, which provides constant
+    //time (O(1)) complexity for lookups and insertions.
+
+    // Constructor to initialize userID automatically
+    public bill(int initialize) {
+        try {
+            Bills = JsonUtil.readFromJsonFile(path, new TypeReference<>() {
+            });
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public bill() {}
     // Constructor to initialize the Bill object
-    public bill(int billID, int customerID, int reading, double consumption, double amount, String issueDate, String dueDate, String status) {
+    public bill(int billID,String meterCode, int customerID, int reading, double consumption, double amount, String issueDate, String dueDate, String status) {
         this.billID = billID;             // Set unique bill ID
         this.customerID = customerID;     // Set customer ID
         this.reading = reading;           // Set meter reading
@@ -31,6 +52,7 @@ public class bill {
         this.issueDate = issueDate;       // Set issue date
         this.dueDate = dueDate;           // Set due date
         this.status = status;             // Set initial status
+        this.meterCode = meterCode;
     }
     public List<bill> readBillsData() {
         try {
@@ -41,6 +63,9 @@ public class bill {
                 System.out.println(e.getMessage());
                 throw new RuntimeException(e);
             }
+    }
+    public List<bill> getBills() {
+        return Bills;
     }
     // Getters and Setters for all attributes
     // Allow controlled access and modification of private attributes
@@ -59,6 +84,7 @@ public class bill {
     public void setCustomerID(int customerID) {
         this.customerID = customerID;
     }
+//
 // FIXME : UNIDENTIFIED VARIABLE : meterCode
 
 //    public String getMeterCode() {
@@ -153,6 +179,32 @@ public class bill {
         System.out.println("Bill status updated to: " + this.status);
     }
 
+
+    public double getAllMeterBillsAmount(String meterCode){
+        double total = 0;
+        for(bill bl : Bills){
+            if (bl.getMeterCode().equals(meterCode) && !bl.getStatus().equals("paid"))
+                total+=bl.getAmount();
+        }
+        return total;
+    }
+    public List<bill> getMeterBills(String meterCode) {
+        return Bills
+                .stream()
+                .filter(b -> b.getMeterCode().equals(meterCode))
+                .sorted(Comparator.comparing(bill::getDueDate)) // Sort by due date
+                .collect(Collectors.toList());
+    }
+    public void setAllBillsPaidForMeter(String meterCode) {
+        double total = 0;
+        for (int i = 0; i < Bills.size(); i++) {
+            if (Bills.get(i).getMeterCode().equals(meterCode)) {
+                Bills.get(i).setStatus("paid");
+                saveToJson(Bills);
+                return;
+            }
+        }
+    }
    public void getAllBillsDetails(List<bill> AllBills){
        for (int i = 0; i < AllBills.size(); i++) {
            System.out.println("Bill Details:");
@@ -211,23 +263,6 @@ public class bill {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Method to send a reminder if the bill is unpaid
     public void sendReminder() {
         if (this.status.equals("Unpaid")) { // Check if the status is "Unpaid"
@@ -236,7 +271,11 @@ public class bill {
     }
 
 
+    public String getMeterCode() {
+        return meterCode;
+    }
 
-
-
+    public void setMeterCode(String meterCode) {
+        this.meterCode = meterCode;
+    }
 }

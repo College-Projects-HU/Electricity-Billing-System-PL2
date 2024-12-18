@@ -4,9 +4,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="200.0" styleClass="login-logo-container" stylesheets="@../Styles/login.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <FontAwesomeIconView glyphName="BOLT" size="30" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ElecTribe" />
-   </children>
+<VBox prefHeight="400.0" prefWidth="200.0" styleClass="login-logo-container" stylesheets="@../Styles/login.css"
+      xmlns="http://javafx.com/javafx/23.0.1" >
+   <FontAwesomeIconView glyphName="BOLT" size="30"/>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ElecTribe"/>
 </VBox>

@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
+<?import javafx.scene.text.Text?>
 <AnchorPane prefHeight="400.0" prefWidth="450.0" stylesheets="@../../Styles/ComplaintForm.css"
             xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.electricity_billing_system.Controllers.Customer.ComplaintFormController">
@@ -42,6 +43,7 @@
     </VBox>
     <VBox layoutX="-3.0" layoutY="345.0" prefHeight="53.0" prefWidth="450.0" styleClass="submit-button"
           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0"/>
         <Button fx:id="submit_complaint_btn" mnemonicParsing="false" text="Submit Complaint"/>
     </VBox>
 </AnchorPane>

@@ -28,7 +28,7 @@ public class Operator {
         if (meter != null) {
             System.out.println("Bill for Meter Code: " + meter.getMeterCode());
             System.out.println("Region: " + meter.getRegion());
-            System.out.println("Current Reading: " + meter.getCurrentReading());
+            System.out.println("Current Reading: " + meter.getMonthlyReading());
         } else {
             System.out.println("Meter with code " + meterCode + " not found.");
         }
@@ -52,10 +52,10 @@ public class Operator {
     public void validateReading(String meterCode, double realConsumption) {
         Meter meter = findMeterByCode(meterCode);
         if (meter != null) {
-            if (meter.getCurrentReading() == realConsumption) {
+            if (meter.getMonthlyReading() == realConsumption) {
                 System.out.println("Reading for meter " + meterCode + " is valid.");
             } else {
-                System.out.println("Discrepancy found for meter " + meterCode + ". Expected: " + realConsumption + ", Found: " + meter.getCurrentReading());
+                System.out.println("Discrepancy found for meter " + meterCode + ". Expected: " + realConsumption + ", Found: " + meter.getMonthlyReading());
             }
         } else {
             System.out.println("Meter with code " + meterCode + " not found.");

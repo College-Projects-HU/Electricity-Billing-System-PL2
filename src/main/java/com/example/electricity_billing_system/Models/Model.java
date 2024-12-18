@@ -7,11 +7,12 @@ public class Model {
     private static Model model;
     private final ViewFactory viewFactory;
     private BorderPane BorderParent;
+    private Meter meter;
+    private OldCustomer customer;
 
     private Model() {
         this.viewFactory = new ViewFactory();
     }
-
 
     public static synchronized Model getInstance(){
         if(model == null){
@@ -30,5 +31,12 @@ public class Model {
 
     public BorderPane getBorderParent() {
         return BorderParent;
+    }
+
+    public Meter getMeter(){
+        return meter;
+    }
+    public void setMeter(Meter meter) {
+        this.meter = meter;
     }
 }

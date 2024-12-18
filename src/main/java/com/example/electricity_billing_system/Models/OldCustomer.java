@@ -54,6 +54,15 @@ public class OldCustomer extends User {
         return meterNumber;
     }
 
+    public void setComplaints(List<String> complaints) {
+        this.complaints = complaints;
+    }
+
+    public List<String> getComplaints() {
+        return this.complaints;
+    }
+
+
     public void setMeterNumber(String meterNumber) {
         this.meterNumber = meterNumber;
     }
@@ -61,6 +70,7 @@ public class OldCustomer extends User {
     public double getOutstandingBillAmount() {
         return outstandingBillAmount;
     }
+
 
     @Override
     public String getUserName() {
@@ -88,6 +98,9 @@ public class OldCustomer extends User {
     @Override
     public void setUserRole(String role) {
         super.setUserRole(role);
+    }
+    public void setUserID(int Id) {
+        super.setUserID(Id);
     }
 
     // Method to view the bill

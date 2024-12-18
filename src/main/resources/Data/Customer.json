@@ -1,18 +1,18 @@
 [ {
-  "userName" : "John Doe",
-  "userPassword" : "password123",
-  "userRole" : null,
+  "userName" : "c",
+  "userPassword" : "c",
+  "userRole" : "Customer",
   "userID" : 2,
   "address" : "123 Maple Street",
   "email" : "john.d3oe@example.com",
   "phoneNumber" : "555-1234",
   "meterNumber" : "MTR001",
   "outstandingBillAmount" : 100.5,
-  "complaints" : [ ]
+  "complaints" : [ "asdfasdf", "asdfawerf" ]
 }, {
   "userName" : "a",
   "userPassword" : "d",
-  "userRole" : "user",
+  "userRole" : "Admin",
   "userID" : 4,
   "address" : "s",
   "email" : "a",
@@ -20,4 +20,81 @@
   "meterNumber" : "a",
   "outstandingBillAmount" : 0.0,
   "complaints" : [ ]
+}, {
+  "userName" : "Operator",
+  "userPassword" : "Operator",
+  "userRole" : "Operator",
+  "userID" : 4,
+  "address" : "s",
+  "email" : "a",
+  "phoneNumber" : "sd",
+  "meterNumber" : "a",
+  "outstandingBillAmount" : 0.0,
+  "complaints" : [ ]
+}, {
+  "userName" : "asdf",
+  "userPassword" : "fsadf",
+  "userRole" : "Customer",
+  "userID" : 4,
+  "address" : "sadf",
+  "email" : "asdfasd",
+  "phoneNumber" : null,
+  "meterNumber" : null,
+  "outstandingBillAmount" : 0.0,
+  "complaints" : null
+}, {
+  "userName" : "asdf",
+  "userPassword" : "fsadf",
+  "userRole" : "Customer",
+  "userID" : 5,
+  "address" : "sadf",
+  "email" : "asdfasd",
+  "phoneNumber" : null,
+  "meterNumber" : null,
+  "outstandingBillAmount" : 0.0,
+  "complaints" : null
+}, {
+  "userName" : "asdfasdf",
+  "userPassword" : "asdfa",
+  "userRole" : "Customer",
+  "userID" : 6,
+  "address" : "asdf",
+  "email" : "asdfasdf",
+  "phoneNumber" : null,
+  "meterNumber" : null,
+  "outstandingBillAmount" : 0.0,
+  "complaints" : null
+}, {
+  "userName" : "asdf",
+  "userPassword" : ";lkjasl;kdf",
+  "userRole" : "Customer",
+  "userID" : 7,
+  "address" : "lkjasdl;fj",
+  "email" : "jl;aksjdfl",
+  "phoneNumber" : null,
+  "meterNumber" : null,
+  "outstandingBillAmount" : 0.0,
+  "complaints" : null
+}, {
+  "userName" : "asdf",
+  "userPassword" : "asdfasdf",
+  "userRole" : "Customer",
+  "userID" : 8,
+  "address" : "asdfasdf",
+  "email" : "abdunader1772005@gmail.com",
+  "phoneNumber" : null,
+  "meterNumber" : null,
+  "outstandingBillAmount" : 0.0,
+  "complaints" : null
+}, {
+  "userName" : "sxvxcv",
+  "userPassword" : "asdf",
+  "userRole" : "Customer",
+  "userID" : 9,
+  "address" : "asdf",
+  "email" : "abdunader1772005@gmail.com",
+  "phoneNumber" : null,
+  "meterNumber" : null,
+  "outstandingBillAmount" : 0.0,
+  "complaints" : null
 } ]

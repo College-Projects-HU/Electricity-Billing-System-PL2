@@ -22,17 +22,20 @@ public class User {
     //time (O(1)) complexity for lookups and insertions.
 
     // Constructor to initialize userID automatically
-    public User(int initialize) throws IOException {
-        allCustomers = JsonUtil.readFromJsonFile(path, new TypeReference<>() {});
-        System.out.println(allCustomers.getLast().getEmail());
+    public User(int initialize)  {
+        try {
+            allCustomers = JsonUtil.readFromJsonFile(path, new TypeReference<>() {});
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public User(){}
     // Constructor to initialize userID automatically
-    public User(int userID ,String userName,String userPassword) {
+    public User(int userID ,String userName,String userPassword,String userRole) {
         this.userID = userID;
         this.userName = userName;
         this.userPassword = userPassword;
-        this.userRole = "user";
+        this.userRole = userRole;
     }
     
     
@@ -62,14 +65,20 @@ public class User {
     public int getUserID(){
        return userID;
     }
+    public void setUserID(int id){
+        this.userID = id;
+    }
     
 
     // CreatAccount
-    public boolean createAccount(String name, String password, String role) {
+    public boolean createAccount(String name, String password, String role,String Email , String Region) {
         OldCustomer customer = new OldCustomer();
         customer.setUserName(name);
         customer.setUserPassword(password);
         customer.setUserRole(role);
+        customer.setEmail(Email);
+        customer.setAddress(Region);
+        customer.setUserID(allCustomers.size() + 1);
         allCustomers.add(customer);
         return saveToJson();
     }
@@ -78,7 +87,19 @@ public class User {
         return allCustomers;
     }
 
-
+    public void addComplaint(String userName, String complaint) {
+        for (OldCustomer customer : allCustomers) {
+            if (customer.getUserName().equals(userName)) {
+                if (customer.getComplaints() == null) {
+                    customer.setComplaints(new ArrayList<>());
+                }
+                customer.getComplaints().add(complaint);
+                saveToJson();
+                return;
+            }
+        }
+        System.out.println("User not found!");
+    }
 
     //Logout
 
@@ -89,8 +110,8 @@ public class User {
     }
     @JsonIgnore
 
-    public OldCustomer getCustomerById(int id) {
-        Optional<OldCustomer> customer = allCustomers.stream().filter(c -> c.getUserID() == (id))
+    public OldCustomer checkUserExist(String username, String password) {
+        Optional<OldCustomer> customer = allCustomers.stream().filter(c -> c.getUserName().equals(username) && c.getUserPassword().equals(password))
                 .findFirst();
         return customer.orElse(null);
     }
@@ -124,14 +145,7 @@ public class User {
         System.out.println("User not found!");
     }
 
-  /*  public List<bill> getCustomerBills(int id) {
-        BillingService billingService = new BillingService();
-        return billingService.getAllBills()
-                .stream()
-                .filter(b -> b.getCustomerID() ==(id))
-                .sorted(Comparator.comparing(bill::getDueDate)) // Sort by due date
-                .collect(Collectors.toList());
-    }*/
+
     private boolean saveToJson() {
         try {
             JsonUtil.writeToJsonFile(allCustomers,path);
