@@ -19,7 +19,7 @@ public class EmailUtil {
 
         // Authentication credentials
         final String username = "americanacc442005@gmail.com"; // Sender's email address
-        final String password = "asd012345@gmail.com"; // Sender's email password
+        final String password = "ijjfelaahbuypffjl"; // Sender's email password
 
         // Create a session with authentication
         Session session = Session.getInstance(props, new Authenticator() {
@@ -28,6 +28,8 @@ public class EmailUtil {
                 return new PasswordAuthentication(username, password);
             }
         });
+
+        session.setDebug(true);
 
         try {
             // Compose the email
@@ -39,6 +41,7 @@ public class EmailUtil {
 
             // Send the email
             Transport.send(message);
+
 
             System.out.println("Email sent successfully!");
 

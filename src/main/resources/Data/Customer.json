@@ -75,26 +75,4 @@
   "meterNumber" : null,
   "outstandingBillAmount" : 0.0,
   "complaints" : null
-}, {
-  "userName" : "asdf",
-  "userPassword" : "asdfasdf",
-  "userRole" : "Customer",
-  "userID" : 8,
-  "address" : "asdfasdf",
-  "email" : "abdunader1772005@gmail.com",
-  "phoneNumber" : null,
-  "meterNumber" : null,
-  "outstandingBillAmount" : 0.0,
-  "complaints" : null
-}, {
-  "userName" : "sxvxcv",
-  "userPassword" : "asdf",
-  "userRole" : "Customer",
-  "userID" : 9,
-  "address" : "asdf",
-  "email" : "abdunader1772005@gmail.com",
-  "phoneNumber" : null,
-  "meterNumber" : null,
-  "outstandingBillAmount" : 0.0,
-  "complaints" : null
 } ]

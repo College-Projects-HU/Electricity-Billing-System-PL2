@@ -58,11 +58,11 @@ public class NewCustomerController implements Initializable {
         String region = region_fld.getText();
         String password = password_fld.getText();
         newUser.createAccount(username, password,"Customer", email, region);
-        String mailSubject = "Confirm Meter Email";
-        String messageBody = "Hello " + username + "Thank you for using our system :)\n" +
-                "We are confirming that's your meter working now.\n" +
-                "Thank you. Electric company -:)";
-        EmailUtil.sendEmail(email,mailSubject,messageBody);
+//        String mailSubject = "Confirm Meter Email";
+//        String messageBody = "Hello " + username + "Thank you for using our system :)\n" +
+//                "We are confirming that's your meter working now.\n" +
+//                "Thank you. Electric company -:)";
+//        EmailUtil.sendEmail(email,mailSubject,messageBody);
         user_name_fld.clear();
         email_fld.clear();
         region_fld.clear();
