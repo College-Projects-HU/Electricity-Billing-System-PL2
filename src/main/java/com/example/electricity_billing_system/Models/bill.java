@@ -152,6 +152,7 @@ public class bill {
 
 
     private boolean saveToJson(List<bill> bills) {
+
         try {
             String billFile = System.getProperty("user.dir") + "\\src\\main\\resources\\" + "Data\\Bills.json";
 

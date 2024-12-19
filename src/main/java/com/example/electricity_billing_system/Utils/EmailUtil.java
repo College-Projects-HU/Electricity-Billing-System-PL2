@@ -5,9 +5,6 @@ import jakarta.mail.internet.*;
 import java.util.Properties;
 
 public class EmailUtil {
- /*
- * TODO : fix email issues
- * */
     // Method to send an email
     public static void sendEmail(String recipient, String subject, String messageBody) {
         // Email properties
@@ -18,8 +15,8 @@ public class EmailUtil {
         props.put("mail.smtp.port", "587"); // Gmail SMTP port
 
         // Authentication credentials
-        final String username = "americanacc442005@gmail.com"; // Sender's email address
-        final String password = "ijjfelaahbuypffjl"; // Sender's email password
+        final String username = ""; // Sender's email address
+        final String password = ""; // Sender's email password
 
         // Create a session with authentication
         Session session = Session.getInstance(props, new Authenticator() {

@@ -9,26 +9,3 @@
   "dueDate" : "2024-11-30",
   "status" : "paid",
   "bills" : null
-}, {
-  "meterCode" : "MTR12345",
-  "billID" : 1,
-  "customerID" : 1,
-  "reading" : 150,
-  "consumption" : 300.0,
-  "amount" : 12000.0,
-  "issueDate" : "2024-11-01",
-  "dueDate" : "2024-11-30",
-  "status" : "Unpaid",
-  "bills" : null
-}, {
-  "meterCode" : "MTR12345",
-  "billID" : 102,
-  "customerID" : 2,
-  "reading" : 200,
-  "consumption" : 400.0,
-  "amount" : 160.0,
-  "issueDate" : "2024-11-05",
-  "dueDate" : "2024-12-05",
-  "status" : "Paid",
-  "bills" : null
-} ]

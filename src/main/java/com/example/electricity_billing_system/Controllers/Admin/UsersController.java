@@ -36,7 +36,7 @@ public class UsersController implements Initializable {
         users_list.setItems(displayedUsers);
 
         // Custom cell factory to show detailed user information
-        users_list.setCellFactory(param -> new ListCell<>() {
+        users_list.setCellFactory(m -> new ListCell<>() {
             @Override
             protected void updateItem(OldCustomer user, boolean empty) {
                 super.updateItem(user, empty);

@@ -13,11 +13,10 @@ public class OldCustomer extends User {
     private String meterNumber;
     private double outstandingBillAmount;
 
+
     @JsonProperty("complaints") // Ensure Jackson recognizes this field when deserializing from JSON
     private List<String> complaints;
-    public OldCustomer(){
-        super();
-    }
+    public OldCustomer(){}
     public OldCustomer(String address, String email, String phoneNumber, String meterNumber) {
         this.address = address;
         this.email = email;

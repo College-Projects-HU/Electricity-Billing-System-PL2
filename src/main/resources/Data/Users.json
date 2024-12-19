@@ -1,27 +1,5 @@
 [ {
-  "userName" : "c",
-  "userPassword" : "c",
-  "userRole" : "Customer",
-  "userID" : 1,
-  "address" : "123 Maple Street",
-  "email" : "john.d3oe@example.com",
-  "phoneNumber" : "555-1234",
-  "meterNumber" : "MTR001",
-  "outstandingBillAmount" : 100.5,
-  "complaints" : [ "asdfasdf", "asdfawerf", "adsfasdf" ]
-}, {
-  "userName" : "o",
-  "userPassword" : "o",
-  "userRole" : "Operator",
-  "userID" : 2,
-  "address" : "s",
-  "email" : "a",
-  "phoneNumber" : "sd",
-  "meterNumber" : "a",
-  "outstandingBillAmount" : 0.0,
-  "complaints" : [ ]
-}, {
-  "userName" : "a",
+  "userName" : "b",
   "userPassword" : "d",
   "userRole" : "Admin",
   "userID" : 3,
@@ -38,6 +16,17 @@
   "userID" : 4,
   "address" : "Cairo",
   "email" : "kairml;dkfs@l;df.com",
+  "phoneNumber" : null,
+  "meterNumber" : null,
+  "outstandingBillAmount" : 0.0,
+  "complaints" : null
+}, {
+  "userName" : "o",
+  "userPassword" : "o",
+  "userRole" : "Operator",
+  "userID" : 4,
+  "address" : "ufglij",
+  "email" : "ghfjk",
   "phoneNumber" : null,
   "meterNumber" : null,
   "outstandingBillAmount" : 0.0,

@@ -17,7 +17,6 @@ public class AdminMenuController implements Initializable {
     public void initialize(java.net.URL url, java.util.ResourceBundle resourceBundle) {
         addListeners();
     }
-
     private void addListeners() {
         view_stat_btn.setOnAction(event -> onViewStats());
         view_bill_btn.setOnAction(event -> onViewBills());
@@ -25,9 +24,6 @@ public class AdminMenuController implements Initializable {
         add_user_btn.setOnAction(event -> onAddUsers());
         logout_btn.setOnAction(event -> logout());
     }
-
-
-
 
     private void onViewStats() {
         Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("View_Stats");
