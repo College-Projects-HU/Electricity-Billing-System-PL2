@@ -18,13 +18,13 @@
          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label text="Enter Meter Code :"/>
       <TextField fx:id="meter_code_fld"/>
-      <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-message" text="error"/>
+      <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-message"/>
       <Button fx:id="show_tariff_btn" mnemonicParsing="false" text="Show"/>
    </HBox>
    <HBox alignment="CENTER" layoutY="178.0" prefHeight="100.0" prefWidth="600.0" styleClass="hboxes"
          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label text="Meter Code :"/>
-      <Text fx:id="meter_code_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="Meter Code "/>
+      <Text fx:id="meter_code_txt" strokeType="OUTSIDE" strokeWidth="0.0"/>
    </HBox>
    <HBox alignment="CENTER" layoutY="378.0" prefHeight="100.0" prefWidth="600.0" styleClass="hboxes"
          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -35,6 +35,6 @@
    <HBox alignment="CENTER" layoutY="278.0" prefHeight="100.0" prefWidth="600.0" styleClass="hboxes"
          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label text="Current Tariff :"/>
-      <Text fx:id="tariff_name_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="Tariff Name"/>
+      <Text fx:id="tariff_name_txt" strokeType="OUTSIDE" strokeWidth="0.0" />
    </HBox>
 </AnchorPane>

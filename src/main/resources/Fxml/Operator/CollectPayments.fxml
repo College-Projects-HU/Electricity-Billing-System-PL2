@@ -15,21 +15,21 @@
    <HBox alignment="CENTER" layoutX="-1.0" layoutY="81.0" prefHeight="100.0" prefWidth="600.0" styleClass="hboxes" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label text="Enter Meter Code :" />
       <TextField fx:id="meter_code_fld" />
-      <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-message" text="" />
+      <Text fx:id="error_msg" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="error-message" />
       <Button fx:id="calculate_btn" mnemonicParsing="false" text="Calculate" />
    </HBox>
    <HBox alignment="CENTER_LEFT" layoutX="-4.0" layoutY="163.0" prefHeight="100.0" prefWidth="600.0" styleClass="hboxes" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0">
       <Label text="The Reading Entered :" />
-      <Text fx:id="reading_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="750 K.W.H" />
+      <Text fx:id="reading_txt" strokeType="OUTSIDE" strokeWidth="0.0"  />
    </HBox>
    <HBox alignment="CENTER_LEFT" layoutY="249.0" prefHeight="69.0" prefWidth="600.0" styleClass="hboxes" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label text="The Real Consumption :" />
-      <Text fx:id="consumption_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="750 K.W.H" />
+      <Text fx:id="consumption_txt" strokeType="OUTSIDE" strokeWidth="0.0"  />
    </HBox>
    <VBox alignment="CENTER" layoutX="122.0" layoutY="303.0" prefHeight="100.0" prefWidth="600.0" styleClass="calculation" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Line endX="100.0" startX="-100.0" />
       <Label text="The Difference :" />
-      <Text fx:id="difference_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="1%" />
+      <Text fx:id="difference_txt" strokeType="OUTSIDE" strokeWidth="0.0"  />
    </VBox>
    <HBox alignment="CENTER" layoutX="3.0" layoutY="478.0" prefHeight="100.0" prefWidth="600.0" styleClass="buttonset" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-3.0">
       <Button fx:id="collect_btn" mnemonicParsing="false" text="Collect" />
@@ -37,7 +37,7 @@
    </HBox>
    <HBox alignment="CENTER_LEFT" layoutX="2.0" layoutY="404.0" prefHeight="69.0" prefWidth="600.0" styleClass="hboxes" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
       <Label text="The Bill will be Paid :" />
-      <Text fx:id="bill_amount_txt" strokeType="OUTSIDE" strokeWidth="0.0" text="150" />
+      <Text fx:id="bill_amount_txt" strokeType="OUTSIDE" strokeWidth="0.0"  />
       <FontAwesomeIconView glyphName="DOLLAR" />
    </HBox>
 </AnchorPane>

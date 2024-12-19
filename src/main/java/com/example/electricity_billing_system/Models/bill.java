@@ -6,8 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 //bill class
@@ -195,6 +194,16 @@ public class bill {
                 .sorted(Comparator.comparing(bill::getDueDate)) // Sort by due date
                 .collect(Collectors.toList());
     }
+
+    public List<String> getAllBillsRegion() {
+        Set<String> regionSet = new HashSet<>();
+        Meter m = new Meter(1);
+        for (bill b : Bills) {
+            String region = m.checkMeterExist(b.getMeterCode()).getRegion();
+            regionSet.add(region);
+        }
+        return new ArrayList<>(regionSet); // Convert Set back to List
+    }
     public void setAllBillsPaidForMeter(String meterCode) {
         double total = 0;
         for (int i = 0; i < Bills.size(); i++) {
@@ -278,4 +287,5 @@ public class bill {
     public void setMeterCode(String meterCode) {
         this.meterCode = meterCode;
     }
+
 }

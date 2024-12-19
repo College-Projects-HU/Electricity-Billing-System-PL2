@@ -8,7 +8,7 @@
   "phoneNumber" : "555-1234",
   "meterNumber" : "MTR001",
   "outstandingBillAmount" : 100.5,
-  "complaints" : [ "asdfasdf", "asdfawerf" ]
+  "complaints" : [ "asdfasdf", "asdfawerf", "adsfasdf" ]
 }, {
   "userName" : "a",
   "userPassword" : "d",
@@ -21,8 +21,8 @@
   "outstandingBillAmount" : 0.0,
   "complaints" : [ ]
 }, {
-  "userName" : "Operator",
-  "userPassword" : "Operator",
+  "userName" : "o",
+  "userPassword" : "o",
   "userRole" : "Operator",
   "userID" : 4,
   "address" : "s",

@@ -22,7 +22,6 @@ public class MonthlyReadingController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         meterCode = Model.getInstance().getMeter().getMeterCode();
-
         back_btn.setOnAction(event -> backToMain());
         submit_reading_btn.setOnAction(event -> confirmNewReading(Double.parseDouble(monthly_reading_fld.getText())));
         status_txt.setText("");

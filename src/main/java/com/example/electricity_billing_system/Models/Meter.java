@@ -13,6 +13,7 @@ public class Meter {
     private String meterCode; // رمز العداد
     private String region;     // المنطقة التي ينتمي لها العداد (تم تغييرها إلى Region)
     private double monthlyReading; // القراءة الحالية للعداد
+    private double monthlyConsumption;
     private boolean isActive; // حالة العداد (نشط أو متوقف)
     @JsonIgnore
     private List<Meter> meters;
@@ -64,6 +65,16 @@ public class Meter {
     public double getMonthlyReading() {
         return monthlyReading;
     }
+
+//    public double getMonthlyReadingByCode(Meter meter) {
+//        for (int i = 0; i < meters.size(); i++) {
+//            if (meters.get(i).getMeterCode().equals(meter.getMeterCode())) {
+//                return meter.getMonthlyReading();
+//            }
+//        }
+//        return 0.0;
+//    }
+
 
     public void setMonthlyReading(double monthlyReading) {
         this.monthlyReading = monthlyReading;
@@ -145,6 +156,11 @@ public class Meter {
         return null;
     }
 
+    public double getMonthlyConsumption() {
+        return monthlyConsumption;
+    }
 
-
+    public void setMonthlyConsumption(double monthlyConsumption) {
+        this.monthlyConsumption = monthlyConsumption;
+    }
 }

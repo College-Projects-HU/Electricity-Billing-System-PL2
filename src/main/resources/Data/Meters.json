@@ -1,11 +1,13 @@
 [ {
   "meterCode" : "MTR12345",
-  "region" : "Downtown",
+  "region" : "Maadi",
   "monthlyReading" : 3.4514512E7,
+  "monthlyConsumption" : 134132 ,
   "isActive" : true
 }, {
   "meterCode" : "MTR54321",
-  "region" : "Uptown",
-  "monthlyReading" : 300.5,
+  "region" : "Helwan",
+  "monthlyReading" : 41313.0,
+  "monthlyConsumption" : 130741 ,
   "isActive" : false
 } ]

@@ -1,5 +1,5 @@
 [ {
-  "meterCode" : "MTR12345",
+  "meterCode" : "MTR54321",
   "billID" : 1,
   "customerID" : 1,
   "reading" : 150,
@@ -7,19 +7,20 @@
   "amount" : 120.0,
   "issueDate" : "2024-11-01",
   "dueDate" : "2024-11-30",
-  "status" : "Unpaid"
-},
-  {
-    "meterCode" : "MTR12345",
-    "billID" : 1,
-    "customerID" : 1,
-    "reading" : 150,
-    "consumption" : 300.0,
-    "amount" : 12000.0,
-    "issueDate" : "2024-11-01",
-    "dueDate" : "2024-11-30",
-    "status" : "Unpaid"
-  },{
+  "status" : "paid",
+  "bills" : null
+}, {
+  "meterCode" : "MTR12345",
+  "billID" : 1,
+  "customerID" : 1,
+  "reading" : 150,
+  "consumption" : 300.0,
+  "amount" : 12000.0,
+  "issueDate" : "2024-11-01",
+  "dueDate" : "2024-11-30",
+  "status" : "Unpaid",
+  "bills" : null
+}, {
   "meterCode" : "MTR12345",
   "billID" : 102,
   "customerID" : 2,
@@ -28,5 +29,6 @@
   "amount" : 160.0,
   "issueDate" : "2024-11-05",
   "dueDate" : "2024-12-05",
-  "status" : "Paid"
+  "status" : "Paid",
+  "bills" : null
 } ]
