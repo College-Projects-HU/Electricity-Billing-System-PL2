@@ -5,6 +5,7 @@ module com.example.electricity_billing_system {
     requires com.fasterxml.jackson.databind;
     requires jakarta.mail;
     opens com.example.electricity_billing_system.Models to com.fasterxml.jackson.databind;
+    opens com.example.electricity_billing_system.Controllers.Admin to javafx.fxml;
 
     opens com.example.electricity_billing_system to javafx.fxml;
     exports com.example.electricity_billing_system;

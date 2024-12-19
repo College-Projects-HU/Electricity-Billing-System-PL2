@@ -2,12 +2,14 @@
   "meterCode" : "MTR12345",
   "region" : "Maadi",
   "monthlyReading" : 3.4514512E7,
-  "monthlyConsumption" : 134132 ,
-  "isActive" : true
+  "monthlyConsumption" : 134132.0,
+  "isActive" : true,
+  "tariff" : "STANDARD"
 }, {
   "meterCode" : "MTR54321",
   "region" : "Helwan",
   "monthlyReading" : 41313.0,
-  "monthlyConsumption" : 130741 ,
-  "isActive" : false
+  "monthlyConsumption" : 130741.0,
+  "isActive" : false,
+  "tariff" : "none"
 } ]

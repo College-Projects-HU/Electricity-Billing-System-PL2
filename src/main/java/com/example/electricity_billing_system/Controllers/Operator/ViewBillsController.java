@@ -24,15 +24,14 @@ public class ViewBillsController implements Initializable {
         bill billClass = new bill(1);
         List<bill> bills = billClass.getBills();
         List<String> allRegions = billClass.getAllBillsRegion();
-
+        allRegions.addFirst("All Regions");
         ObservableList<String> regionListView = FXCollections.observableArrayList(allRegions);
         region_select.setItems(regionListView);
-
         region_select.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 Meter m = new Meter(1);
                 List<String> filteredBills = bills.stream()
-                        .filter(bill -> newValue.equals(m.checkMeterExist(bill.getMeterCode()).getRegion()))
+                        .filter(bill -> newValue.equals(m.checkMeterExist(bill.getMeterCode()).getRegion()) || newValue.equals("All Regions"))
                         .map(bill -> "Bill ID: " + bill.getBillID() +
                                 ", Amount: " + bill.getAmount() +
                                 ", Issue Date: " + bill.getIssueDate() +

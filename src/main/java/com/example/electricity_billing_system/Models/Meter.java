@@ -15,6 +15,7 @@ public class Meter {
     private double monthlyReading; // القراءة الحالية للعداد
     private double monthlyConsumption;
     private boolean isActive; // حالة العداد (نشط أو متوقف)
+    private String tariff;
     @JsonIgnore
     private List<Meter> meters;
     @JsonIgnore
@@ -38,11 +39,12 @@ public class Meter {
     }
 
     // Constructor
-    public Meter(String meterCode, String region, double monthlyReading, boolean isActive) {
+    public Meter(String meterCode, String region, double monthlyReading, boolean isActive, String tariff) {
         this.meterCode = meterCode;
         this.region = region;
         this.monthlyReading = 0.0; // القراءة الافتراضية
         this.isActive = true;      // العداد نشط افتراضيًا
+        this.tariff = tariff;
     }
 
     // Getters and Setters
@@ -162,5 +164,31 @@ public class Meter {
 
     public void setMonthlyConsumption(double monthlyConsumption) {
         this.monthlyConsumption = monthlyConsumption;
+    }
+
+    public void updateMeterStatus(Meter currentMeter, boolean active) {
+        for (int i = 0; i < meters.size(); i++) {
+            if (meters.get(i).getMeterCode().equals(currentMeter.getMeterCode())) {
+                meters.get(i).setIsActive(active);
+                saveToJson();
+            }
+        }
+    }
+
+    public String getTariff() {
+        return tariff;
+    }
+
+    public void setTariff(String tariff) {
+        this.tariff = tariff;
+    }
+
+    public void setTariffForMeter(Meter currentMeter, String tariff) {
+        for (int i = 0; i < meters.size(); i++) {
+            if (meters.get(i).getMeterCode().equals(currentMeter.getMeterCode())) {
+                meters.get(i).setTariff(tariff);
+                saveToJson();
+            }
+        }
     }
 }

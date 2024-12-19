@@ -2,7 +2,7 @@ package com.example.electricity_billing_system.Controllers.Customer;
 
 import com.example.electricity_billing_system.Models.Model;
 import com.example.electricity_billing_system.Models.User;
-import com.example.electricity_billing_system.Utils.EmailUtil;
+//import com.example.electricity_billing_system.Utils.EmailUtil;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -52,12 +52,12 @@ public class NewCustomerController implements Initializable {
 
     private void submitNewUser(){
 
-        User newUser = new User(1);
+        User userModel = new User(1);
         String username = user_name_fld.getText();
         String email = email_fld.getText();
         String region = region_fld.getText();
         String password = password_fld.getText();
-        newUser.createAccount(username, password,"Customer", email, region);
+        userModel.createAccount(username, password,"Customer", email, region);
 //        String mailSubject = "Confirm Meter Email";
 //        String messageBody = "Hello " + username + "Thank you for using our system :)\n" +
 //                "We are confirming that's your meter working now.\n" +

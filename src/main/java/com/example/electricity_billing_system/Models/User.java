@@ -15,7 +15,7 @@ public class User {
     @JsonIgnore
     private List<OldCustomer> allCustomers;
     @JsonIgnore
-    private final String path = System.getProperty("user.dir") + "\\src\\main\\resources\\Data\\" + "Customer.json";
+    private final String path = System.getProperty("user.dir") + "\\src\\main\\resources\\Data\\" + "Users.json";
 
     // Static set to store unique userIDs
     //HashSet uses a hash table for storage, which provides constant
